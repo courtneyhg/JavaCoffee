@@ -3,3 +3,4 @@
 * We brainstormed final project ideas
 * We switched from supermarket idea to coffee shop idea because our team name duh
 * We made goog doc for final project proposal
+* Tweaked with some tester code
