@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Customer {
   double budget = Math.round((Math.random() * 50.00) * 100) / 100.0;
+  double bill;
 
   String[][] menu = {
     {"Item", "Price"},
@@ -49,12 +50,18 @@ public class Customer {
     try {
         if (k.contains(order)) {
           // System.out.println(menu[p][2]);
-          System.out.println("Great! Anything else?");
+          System.out.println("Great! Anything else?\n\t1. Yes.\n\t2. No.");
         }
-    }
-    catch (Exception e) {
+    }  catch (Exception e) {
       System.out.println("Uhm...What?");
     }
 
+    Scanner d = new Scanner(System.in);
+    if ( d.nextLine().equals("1")){
+      System.out.println("What else would you like to order? ");
+
+
+
   }
+}
 } //end class
