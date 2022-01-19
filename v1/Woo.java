@@ -17,14 +17,14 @@ public class Woo {
       l++;
     }
 
-    System.out.println("\nWelcome to Café Cat Caca! 🐈 What are you here for?\n\t1. I am a customer.\n\t2. I am the new employee.");
+    System.out.println("\nWelcome to Café Cat Caca! What are you here for?\n\t1. I am a customer.\n\t2. I am the new employee.");
 
     if ( g.nextLine().equals("1") ) {
       System.out.println("\nLovely! What can I get for you today?");
       bob.cplay();
     }
-    else if ( g.nextLine().equals("2") ){
-      System.out.println("\nNice to have ya here. Let's get started.");
+    else {
+      System.out.println("Nice to have ya here. Let's get started.");
       joe.eplay();
     }
 
