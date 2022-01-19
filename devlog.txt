@@ -7,3 +7,7 @@
 
 MLK Weekend
 * Finalized propro
+
+1/18/2022
+* Courtney, after a way too long time, figured out how to add a 2d array with
+  strings for the menu
