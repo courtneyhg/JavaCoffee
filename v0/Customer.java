@@ -59,7 +59,7 @@ public class Customer {
   }
 } //end class
 
-/*--------------------courtney--------------------------------*/
+/*--------------------courtney--------------------------------
   public void play() {
 
     System.out.println("Here is your budget, use it wisely: $" + budget);
@@ -93,4 +93,4 @@ public class Customer {
     }
   }
 }
-/*--------------------courtney--------------------------------*/
+--------------------courtney--------------------------------*/
