@@ -1,10 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
-<<<<<<< HEAD
 import java.util.*;
-=======
->>>>>>> 0e0547a081c8e799ef7a001931634ff604010d5c
 
 public class Customer {
   double budget = Math.round((Math.random() * 50.00) * 100) / 100.0;
@@ -59,10 +56,10 @@ public class Customer {
       System.out.println("Uhm...What?");
     }
 
-<<<<<<< HEAD
   }
 } //end class
-=======
+
+/*--------------------courtney--------------------------------*/
   public void play() {
 
     System.out.println("Here is your budget, use it wisely: $" + budget);
@@ -94,7 +91,6 @@ public class Customer {
         System.out.print(newArray[i][j]);
       }
     }
-
   }
-
 }
+/*--------------------courtney--------------------------------*/
