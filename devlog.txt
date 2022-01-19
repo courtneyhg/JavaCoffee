@@ -9,5 +9,10 @@
 * Finalized propro
 
 1/18/2022
+<<<<<<< HEAD
 * Courtney and Jason worked on Woo.java and Customer.java, using KTS to figure out the menu we wanted for the café. They fixed errors along the way.
 * Yuki worked on Employee.java while they were working to maximize efficiency. She tried to be careful with git merge errors but still came into them...sigh.
+=======
+* Courtney, after a way too long time, figured out how to add a 2d array with
+  strings for the menu
+>>>>>>> 0e0547a081c8e799ef7a001931634ff604010d5c
