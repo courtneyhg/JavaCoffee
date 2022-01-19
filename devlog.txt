@@ -14,3 +14,6 @@
 * We all worked on the code (definitely ran into some merge errors but that's okay)
 * We added the menu, added a little launching game animation, added more choices as the game went on, and fixed some errors
 * also worked on UML diagram
+
+1/19/22
+* Yuki imported some code she worked on into v2. 
