@@ -12,5 +12,5 @@
 * Courtney and Jason worked on Woo.java and Customer.java, using KTS to figure out the menu we wanted for the café. They fixed errors along the way.
 * Yuki worked on Employee.java while they were working to maximize efficiency. She tried to be careful with git merge errors but still came into them...sigh.
 * We all worked on the code (definitely ran into some merge errors but that's okay)
-* We added the menu, added a little launching game animation, and added more choices as the game went on
+* We added the menu, added a little launching game animation, added more choices as the game went on, and fixed some errors
 * also worked on UML diagram
