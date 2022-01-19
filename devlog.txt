@@ -5,5 +5,9 @@
 * We made goog doc for final project proposal
 * Tweaked with some tester code
 
-MLK Weekend
+1/14/22 - 1/17/22 (MLK Weekend)
 * Finalized propro
+
+1/18/2022
+* Courtney and Jason worked on Woo.java and Customer.java, using KTS to figure out the menu we wanted for the café. They fixed errors along the way.
+* Yuki worked on Employee.java while they were working to maximize efficiency. She tried to be careful with git merge errors but still came into them...sigh.
