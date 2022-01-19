@@ -6,10 +6,10 @@ import java.util.*;
 public class Customer {
   Scanner c = new Scanner(System.in);
   double budget = Math.round((Math.random() * 50.00) * 100) / 100.0;
+
   int drinkCount = 0;
-  // String[][] receipt = new String[10][2];
   ArrayList <ArrayList<String>> receipt = new ArrayList<ArrayList<String>>();
-  // receipt.add();
+  double total;
 
   String[][] menu = {
     {"Item", "Price"},
@@ -21,29 +21,26 @@ public class Customer {
     {"6. Americano", "$5.00"},
     {"7. Affogato", "$7.00"},
     {"8. Espresso con Panna", "$6.50"},
-    {"9. Mocha", "$7.25"}
+    {"9. Mocha", "$7.25"},
+    {"10.Cat Caca Whole Coffee Beans", "$45.75"}
   };
 
   public void order() {
     System.out.print("\nWhat would you like to order? ");
     String drink = c.nextLine();
-    String k = "123456789";
+    String k = "12345678910";
     int p = Integer.parseInt(drink);
-    receipt.add(new ArrayList<String>());
-    receipt.get(0).add(0, "Item");
-    receipt.get(0).add(1, "Price");
+
 
     if (k.contains(drink)) {
-      receipt.get(drinkCount+1).add(menu[p][0].substring(3));
-      receipt.get(drinkCount+1).add(menu[p][1]);
+      drinkCount++;
       receipt.add(new ArrayList<String>());
-      // receipt[(drinkCount+1)][0] = menu[p][0].substring(3);
-      // receipt[(drinkCount+1)][1] = menu[p][1];
+      receipt.get(drinkCount).add(menu[p][0].substring(3));
+      receipt.get(drinkCount).add(menu[p][1]);
       System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Would you like anything else?");
       System.out.println("\t1. Yes\n\t2. No");
       String orderMore = c.nextLine();
       if (orderMore.equals("1")) {
-        drinkCount++;
         order();
       }
       else if (orderMore.equals("2")) {
@@ -53,28 +50,27 @@ public class Customer {
   }//end order
 
   public void receipt() {
-    // receipt.add(new ArrayList<String>());
-    // receipt.get(0).add(0, "Item");
-    // receipt.get(0).add(1, "Price");
-    System.out.println("\nSweet! Here is your receipt.\n" + receipt);
-    // receipt[0][0] = "Item";
-    // receipt[0][1] = "Price";
-    // for (int r = 0; r < receipt.length; r++) {
-    //   for (int s = 0; s < (receipt[r].length); s++) {
-    //     if (receipt[r][s]==null) {
-    //       break;
-    //     }
-    //     if (s == 0) {
-    //       System.out.print("\t" + receipt[r][s] + " | ");
-    //     }
-    //     else {
-    //       System.out.print(receipt[r][s]);
-    //     }
-    //   }
-    //   System.out.println();
-    // }
-
-
+    System.out.println("\nSweet! Here is your receipt.");
+    for (int r = 0; r < receipt.size(); r++) {
+      for (int s = 0; s < (receipt.get(r).size()); s++) {
+        if (s == 0) {
+          System.out.print("\t" + receipt.get(r).get(s) + " | ");
+        }
+        else {
+          String pri = (receipt.get(r).get(s));
+          System.out.print(pri);
+          if (r > 0) {
+            pri = pri.substring(1);
+            double dolla = Double.parseDouble(pri);
+            total += dolla;
+          }
+        }
+      }
+      System.out.println();
+    }
+    receipt.add(new ArrayList<String>());
+    receipt.get(receipt.size()).add(0, "Total");
+    receipt.get(receipt.size()).add(1, Double.toString(total));
   }//end receipt
 
   public void cplay() {
@@ -91,6 +87,10 @@ public class Customer {
       }
       System.out.println();
     }
+
+    receipt.add(new ArrayList<String>());
+    receipt.get(0).add(0, "Item");
+    receipt.get(0).add(1, "Price");
 
     try {
       order();
