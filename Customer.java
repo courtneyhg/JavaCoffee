@@ -1,13 +1,15 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
-<<<<<<< HEAD
 import java.util.*;
-=======
->>>>>>> 0e0547a081c8e799ef7a001931634ff604010d5c
 
 public class Customer {
+  Scanner c = new Scanner(System.in);
   double budget = Math.round((Math.random() * 50.00) * 100) / 100.0;
+
+  int drinkCount = 0;
+  ArrayList <ArrayList<String>> receipt = new ArrayList<ArrayList<String>>();
+  double total;
 
   String[][] menu = {
     {"Item", "Price"},
@@ -19,19 +21,60 @@ public class Customer {
     {"6. Americano", "$5.00"},
     {"7. Affogato", "$7.00"},
     {"8. Espresso con Panna", "$6.50"},
-    {"9. Mocha", "$7.25"}
+    {"9. Mocha", "$7.25"},
+    {"10.Cat Caca Whole Coffee Beans", "$45.75"}
   };
 
-  public void cplay() {
-    Scanner c = new Scanner(System.in);
-    System.out.println("Here is your budget: $" + budget + ". Take a look at our menu below!\n");
+  public void order() {
+    System.out.print("\nWhat would you like to order? ");
+    String drink = c.nextLine();
+    String k = "12345678910";
+    int p = Integer.parseInt(drink);
 
-    // for (String[] item : menu) {
-    //   for (String yas : item) {
-    //     System.out.print("poop" + yas + " ");
-    //   }
-    //   System.out.println();
-    // }
+
+    if (k.contains(drink)) {
+      drinkCount++;
+      receipt.add(new ArrayList<String>());
+      receipt.get(drinkCount).add(menu[p][0].substring(3));
+      receipt.get(drinkCount).add(menu[p][1]);
+      System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Would you like anything else?");
+      System.out.println("\t1. Yes\n\t2. No");
+      String orderMore = c.nextLine();
+      if (orderMore.equals("1")) {
+        order();
+      }
+      else if (orderMore.equals("2")) {
+        receipt();
+      }
+    }
+  }//end order
+
+  public void receipt() {
+    System.out.println("\nSweet! Here is your receipt.");
+    for (int r = 0; r < receipt.size(); r++) {
+      for (int s = 0; s < (receipt.get(r).size()); s++) {
+        if (s == 0) {
+          System.out.print("\t" + receipt.get(r).get(s) + " | ");
+        }
+        else {
+          String pri = (receipt.get(r).get(s));
+          System.out.print(pri);
+          if (r > 0) {
+            pri = pri.substring(1);
+            double dolla = Double.parseDouble(pri);
+            total += dolla;
+          }
+        }
+      }
+      System.out.println();
+    }
+    receipt.add(new ArrayList<String>());
+    receipt.get(receipt.size()).add(0, "Total");
+    receipt.get(receipt.size()).add(1, Double.toString(total));
+  }//end receipt
+
+  public void cplay() {
+    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
 
     for (int i = 0; i < (menu.length); i++) {
       for (int j = 0; j < (menu[i].length); j++) {
@@ -42,59 +85,28 @@ public class Customer {
           System.out.print(menu[i][j]);
         }
       }
-      System.out.println("");
+      System.out.println();
     }
-    System.out.print("\nWhat would you like to order? ");
-    String order = c.nextLine();
-    String k = "123456789";
-    int p = Integer.parseInt(order);
+
+    receipt.add(new ArrayList<String>());
+    receipt.get(0).add(0, "Item");
+    receipt.get(0).add(1, "Price");
 
     try {
-        if (k.contains(order)) {
-          // System.out.println(menu[p][2]);
-          System.out.println("Great! Anything else?");
-        }
-    }
+      order();
+        // if (k.contains(drink)) {
+        //   System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Anything else? ");
+        //
+        //   String orderMore = c.nextLine();
+        //   if (orderMore.toLowerCase().equals("yes")) {
+        //
+        //   }
+        // } //end contain drink
+    }//end try
+
     catch (Exception e) {
-      System.out.println("Uhm...What?");
-    }
+      System.out.println("Something went wrong. Exiting game.");
+    }//end catch
 
-<<<<<<< HEAD
-  }
+  }//end cplay
 } //end class
-=======
-  public void play() {
-
-    System.out.println("Here is your budget, use it wisely: $" + budget);
-
-    int item = 6;
-    int prices = 2;
-    String[][] newArray = new String[item][prices];
-    newArray[0][0] = "6 oz of cat poop coffee - ";
-    newArray[0][1] = "$35.25";
-
-    newArray[1][0] = "8 oz of cat poop coffee - ";
-    newArray[1][1] = "$45.50";
-
-    newArray[2][0] = "regular coffee - ";
-    newArray[2][1] = "$3.00";
-
-    newArray[3][0] = "macchiato - ";
-    newArray[3][1] = "$3.50";
-
-    newArray[4][0] = "flat white - ";
-    newArray[4][1] = "$4.25";
-
-    newArray[5][0] = "cuppuccino - ";
-    newArray[5][1] = "$5.50";
-
-    for(int i = 0; i < newArray.length; i++){
-      System.out.print("\n");
-      for(int j = 0; j <newArray[i].length; j++){
-        System.out.print(newArray[i][j]);
-      }
-    }
-
-  }
-
-}
