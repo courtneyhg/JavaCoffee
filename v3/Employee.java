@@ -6,6 +6,7 @@ public class Employee {
   Scanner e = new Scanner(System.in);
   ArrayList <ArrayList<String>> menu = new ArrayList<ArrayList<String>>();
   ArrayList stockOrder = new ArrayList<Integer>();
+  ArrayList stockOrderCopy = new ArrayList<Integer>();
 
   public void createMenu() {
 
@@ -71,11 +72,23 @@ public class Employee {
     for (int v = 0; v < menu.size(); v++) {
       stockOrder.add(v, Integer.parseInt(menu.get(v).get(2)));
     }
+  }
+
+  public void ogStock() {
+    stockOrderCopy=stockOrder;
+
     System.out.println("\t\tJust the Stock:");
-    for (int w = 0; w < stockOrder.size(); w++) {
-      System.out.println("\t" + stockOrder.get(w) + " ");
+    for (int w = 0; w < stockOrderCopy.size(); w++) {
+      System.out.println("\t" + stockOrderCopy.get(w) + " ");
     }
   }
+
+   public void printStock(){
+     System.out.println("\t\tJust the Stock:");
+     for (int w = 0; w < stockOrder.size(); w++) {
+       System.out.println("\t" + stockOrder.get(w) + " ");
+     }
+   }
 
   public void eplay() {
     System.out.println("\nNice to have ya here. Let's get started.");
@@ -86,68 +99,8 @@ public class Employee {
     createMenu();
     printMenu();
     justStock();
+    printStock();
     System.out.println("By typing in the numbers next to the items, put them in decreasing order by stock.");
-    //String eSort = e.nextLine();
-
-
-    // String[][] menu = {
-    //   {"Item", "Price"},
-    //   {"1. Cold Brew", "$6.00"},
-    //   {"2. Latte", "$6.75"},
-    //   {"3. Cappucino", "$6.50"},
-    //   {"4. Cortado", "$4.75"},
-    //   {"5. Espresso Shot", "$4.00"},
-    //   {"6. Americano", "$5.00"},
-    //   {"7. Affogato", "$7.00"},
-    //   {"8. Espresso con Panna", "$6.50"},
-    //   {"9. Mocha", "$7.25"}
-    // };
-    //
-    // for (int i = 0; i < (menu.length); i++) {
-    //   for (int j = 0; j < (menu[i].length); j++) {
-    //     if (j == 0) {
-    //       System.out.print("\t" + menu[i][j] + " | ");
-    //     }
-    //     else {
-    //       System.out.print(menu[i][j]);
-    //     }
-    //   }
-    //   System.out.println("");
-    // }
-
-    //making menu
-    // int one = (int) (Math.random() * 50);
-    // int two = (int) (Math.random() * 50);
-    // int three = (int) (Math.random() * 50);
-    // int four = (int) (Math.random() * 50);
-    // int five = (int) (Math.random() * 50);
-    // int six = (int) (Math.random() * 50);
-    // int seven = (int) (Math.random() * 50);
-    // int eight = (int) (Math.random() * 50);
-    // int nine = (int) (Math.random() * 50);
-    // System.out.println("Item - Stock");
-    // System.out.println("1. Cold Brew - " + one);
-    // System.out.println("2. Latte - " + two);
-    // System.out.println("3. Cappucino - " + three);
-    // System.out.println("4. Cortado - " + four);
-    // System.out.println("5. Espresso Shot - " + five);
-    // System.out.println("6. Americano - " + six);
-    // System.out.println("7. Affogato - " + seven);
-    // System.out.println("8. Espresso con Panna - " + eight);
-    // System.out.println("9. Mocha - " + nine);
-
-    // ArrayList stockOrder = new ArrayList<Integer>();
-    // stockOrder.add(one);
-    // stockOrder.add(two);
-    // stockOrder.add(three);
-    // stockOrder.add(four);
-    // stockOrder.add(five);
-    // stockOrder.add(six);
-    // stockOrder.add(seven);
-    // stockOrder.add(eight);
-    // stockOrder.add(nine);
-
-
 
     System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
     long startTime = System.currentTimeMillis();
@@ -155,17 +108,34 @@ public class Employee {
     long endTime = System.currentTimeMillis();
     System.out.println("That took " + ((endTime - startTime)/1000.0) + " seconds.");
     // //Second try. If fail, then game ends.
-    if (((endTime - startTime)/1000.0) > 40 || eSort.equals(StringifybubbleSort(stockOrder)) == false){
-        System.out.println("\nYou've somehow been so bad at your job that you are now working at below minimum wage. Mess up one more time, and you're fired.");
-        justStock();
-        System.out.println("Enter the number in stock in ascending order. You have 40 seconds.");
-        long startTime1 = System.currentTimeMillis();
-        String eSor1t = e.nextLine();
-        long endTime1 = System.currentTimeMillis();
-        System.out.println("That took " + ((endTime1 - startTime1)/1000.0) + " seconds");
 
-        if (((endTime1 - startTime1)/1000.0) > 40 || eSort.equals(StringifybubbleSort(stockOrder)) == false){
+    printStock();
+
+    // System.out.println("\nYou failed, you have one more chance");
+    // System.out.println("\nBy typing in the numbers next to the items, put them in decreasing order by stock.");
+    //
+    // System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
+    // long startTime2 = System.currentTimeMillis();
+    // String eSort2 = e.nextLine();
+    // long endTime2 = System.currentTimeMillis();
+    // System.out.println("That took " + ((endTime - startTime)/1000.0) + " seconds.");
+
+    if (((endTime - startTime)/1000.0) > 40 || eSort.equals(StringifybubbleSort(stockOrder)) == false){
+        System.out.println("\nYou've somehow been so bad at your job that you are now working at below minimum wage.");
+
+         ogStock();
+
+        System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
+        long startTime2 = System.currentTimeMillis();
+        String eSort2 = e.nextLine();
+        long endTime2 = System.currentTimeMillis();
+        System.out.println("That took " + ((endTime2 - startTime2)/1000.0) + " seconds.");
+
+        if (((endTime2 - startTime2)/1000.0) > 40 || eSort.equals(StringifybubbleSort(stockOrder)) == false){
             System.out.println("You just got fired, dummy.");
+
+            System.out.println("\nHere is how you are supposed to do it!");
+            printStock();
             System.exit(0);
         }
 
@@ -199,3 +169,85 @@ public class Employee {
   return stuff;
   }
 }
+
+//         int one1 = (int) (Math.random() * 50);
+// int two2 = (int) (Math.random() * 50);
+// int three3 = (int) (Math.random() * 50);
+// int four4 = (int) (Math.random() * 50);
+// int five5 = (int) (Math.random() * 50);
+// int six6 = (int) (Math.random() * 50);
+// int seven7 = (int) (Math.random() * 50);
+// int eight8 = (int) (Math.random() * 50);
+// int nine9 = (int) (Math.random() * 50);
+// System.out.println("Item - Stock");
+// System.out.println("1. Cold Brew - " + one1);
+// System.out.println("2. Latte - " + two2);
+// System.out.println("3. Cappucino - " + three3);
+// System.out.println("4. Cortado - " + four4);
+// System.out.println("5. Espresso Shot - " + five5);
+// System.out.println("6. Americano - " + six6);
+// System.out.println("7. Affogato - " + seven7);
+// System.out.println("8. Espresso con Panna - " + eight8);
+// System.out.println("9. Mocha - " + nine9);
+
+
+
+//String eSort = e.nextLine();
+
+
+// String[][] menu = {
+//   {"Item", "Price"},
+//   {"1. Cold Brew", "$6.00"},
+//   {"2. Latte", "$6.75"},
+//   {"3. Cappucino", "$6.50"},
+//   {"4. Cortado", "$4.75"},
+//   {"5. Espresso Shot", "$4.00"},
+//   {"6. Americano", "$5.00"},
+//   {"7. Affogato", "$7.00"},
+//   {"8. Espresso con Panna", "$6.50"},
+//   {"9. Mocha", "$7.25"}
+// };
+//
+// for (int i = 0; i < (menu.length); i++) {
+//   for (int j = 0; j < (menu[i].length); j++) {
+//     if (j == 0) {
+//       System.out.print("\t" + menu[i][j] + " | ");
+//     }
+//     else {
+//       System.out.print(menu[i][j]);
+//     }
+//   }
+//   System.out.println("");
+// }
+
+//making menu
+// int one = (int) (Math.random() * 50);
+// int two = (int) (Math.random() * 50);
+// int three = (int) (Math.random() * 50);
+// int four = (int) (Math.random() * 50);
+// int five = (int) (Math.random() * 50);
+// int six = (int) (Math.random() * 50);
+// int seven = (int) (Math.random() * 50);
+// int eight = (int) (Math.random() * 50);
+// int nine = (int) (Math.random() * 50);
+// System.out.println("Item - Stock");
+// System.out.println("1. Cold Brew - " + one);
+// System.out.println("2. Latte - " + two);
+// System.out.println("3. Cappucino - " + three);
+// System.out.println("4. Cortado - " + four);
+// System.out.println("5. Espresso Shot - " + five);
+// System.out.println("6. Americano - " + six);
+// System.out.println("7. Affogato - " + seven);
+// System.out.println("8. Espresso con Panna - " + eight);
+// System.out.println("9. Mocha - " + nine);
+
+// ArrayList stockOrder = new ArrayList<Integer>();
+// stockOrder.add(one);
+// stockOrder.add(two);
+// stockOrder.add(three);
+// stockOrder.add(four);
+// stockOrder.add(five);
+// stockOrder.add(six);
+// stockOrder.add(seven);
+// stockOrder.add(eight);
+// stockOrder.add(nine);
