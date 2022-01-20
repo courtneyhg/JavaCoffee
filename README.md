@@ -7,6 +7,6 @@ Roster: Courtney Huang, Jason Yang, Yuki Feng
 * The customer can solve puzzles or try to dine and dash.
 
 ## How To Launch Instructions:
-1. `javac *.java`
-2. `java Woo`
-3. Play!
+1. Enter into terminal: `javac *.java`
+2. Enter into terminal: `java Woo`
+3. Play the game!
