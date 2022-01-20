@@ -1,6 +1,28 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
+// public static void bubbleSortV( ArrayList<Integer> data )
+// {
+// for (int p=0; p < data.size(); p++){ //makes sure it goes through all passes
+// for (int i = data.size()-1; i>0; i--){ //for loop for each pass
+//   //gets element at index
+//   int bob = data.get(i);
+//   int jeff = data.get(i-1);
+//   //swap ints
+//   if (bob < jeff){
+//     data.set(i, jeff);
+//     data.set(i-1, bob);
+//   }
+// }
+// }
+// }
+//
+// public static ArrayList<Integer> bubbleSort( ArrayList<Integer> input )
+// {
+// bubbleSortV(input);
+// return input;
+// }
+
 public class Employee {
   Scanner e = new Scanner(System.in);
 
@@ -61,42 +83,22 @@ public class Employee {
 
     String eSort = e.nextLine();
 
-      public static void bubbleSortV( ArrayList<Integer> data )
-  {
-    for (int p=0; p < data.size(); p++){ //makes sure it goes through all passes
-      for (int i = data.size()-1; i>0; i--){ //for loop for each pass
-        //gets element at index
-        int bob = data.get(i);
-        int jeff = data.get(i-1);
-        //swap ints
-        if (bob < jeff){
-          data.set(i, jeff);
-          data.set(i-1, bob);
-        }
-      }
-    }
-  }
 
-  public static ArrayList<Integer> bubbleSort( ArrayList<Integer> input )
-{
-  bubbleSortV(input);
-  return input;
-}
 
-ArrayList stockOrder = new ArrayList<Integer>();
-      stockOrder.add(one);
-      stockOrder.add(two);
-      stockOrder.add(three);
-      stockOrder.add(four);
-      stockOrder.add(five);
-      stockOrder.add(six);
-      stockOrder.add(seven);
-      stockOrder.add(eight);
-      stockOrder.add(nine);
+// ArrayList stockOrder = new ArrayList<Integer>();
+//       stockOrder.add(one);
+      // stockOrder.add(two);
+      // stockOrder.add(three);
+      // stockOrder.add(four);
+      // stockOrder.add(five);
+      // stockOrder.add(six);
+      // stockOrder.add(seven);
+      // stockOrder.add(eight);
+      // stockOrder.add(nine);
 
   // bubbleSortV(stockOrder);
-  bubbleSort(stockOrder)
-  System.out.println(bubbleSort(stockOrder));
+  // bubbleSort(stockOrder)
+  // System.out.println(bubbleSort(stockOrder));
     //System.out.println("Hello, " + eSort + "! Here are the basics:");
   }
 }//end class
