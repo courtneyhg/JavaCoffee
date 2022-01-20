@@ -1,5 +1,5 @@
-# JavaCoffee
-### Courtney Huang, Jason Yang, Yuki Feng
+# TNPG: JavaCoffee
+Roster: Courtney Huang, Jason Yang, Yuki Feng
 
 ## Concise Project Description:
 * Our final project is a roleplaying game where the user is either a customer or employee at Café Cat Caca, a coffee shop  specializing in serving the delicacy, cat poop coffee.
