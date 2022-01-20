@@ -6,12 +6,76 @@ import java.util.ArrayList;
 public class Employee {
   Scanner e = new Scanner(System.in);
 
+  public void createMenu() {
+
+    for (int a = 0; a < 11; a++) {
+      menu.add(new ArrayList<String>());;
+    }
+
+    // menu.add(new ArrayList<String>(Arrays.asList("Items", "Price", "Stock")));
+    menu.get(0).add(0, "Item");
+    menu.get(0).add(1, "Price");
+    menu.get(0).add(2, "Stock");
+    menu.get(1).add(0, "1. Cold Brew");
+    menu.get(1).add(1, "6.00");
+    menu.get(1).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(2).add(0, "2. Latte");
+    menu.get(2).add(1, "$6.75");
+    menu.get(2).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(3).add(0, "3. Cappucino");
+    menu.get(3).add(1, "$6.50");
+    menu.get(3).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(4).add(0, "4. Cortado");
+    menu.get(4).add(1, "$4.75");
+    menu.get(4).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(5).add(0, "5. Espresso Shot");
+    menu.get(5).add(1, "$4.00");
+    menu.get(5).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(6).add(0, "6. Americano");
+    menu.get(6).add(1, "$5.00");
+    menu.get(6).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(7).add(0, "7. Affogato");
+    menu.get(7).add(1, "$7.00");
+    menu.get(7).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(8).add(0, "8. Espresso con Panna");
+    menu.get(8).add(1, "$6.55");
+    menu.get(8).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(9).add(0, "9. Mocha");
+    menu.get(9).add(1, "$7.25");
+    menu.get(9).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(10).add(0, "10.Cat Caca Whole Coffee Beans");
+    menu.get(10).add(1, "$45.75");
+    menu.get(10).add(2, Integer.toString((int) (Math.random() * 50)));
+  }
+
+  public void printMenu() {
+    for (int r = 0; r < menu.size(); r++) {
+      for (int s = 0; s < (menu.get(r).size()); s++) {
+        if (s == 0) {
+          System.out.print("\t" + menu.get(r).get(s) + " | ");
+        }
+        else if (s == 1) {
+          System.out.print(menu.get(r).get(s) + " | ");
+        }
+        else {
+          System.out.print(menu.get(r).get(s));
+        }
+      }
+      System.out.println();
+    }
+  }
+
   public void eplay() {
     System.out.println("\nNice to have ya here. Let's get started.");
     System.out.print("First, what should I call you? ");
     String eName = e.nextLine();
     System.out.println("Hello, " + eName + "! Here are the basics:");
-    System.out.println("\t- Your hourly wage is $15 per hour.\n\t- You work 8 hour shifts on 3 days of the week.\n\t- You get paid biweekly.\n\t- Your first job is to restock our menu.\n");
+    System.out.println("\t- Your hourly wage is $15 per hour.\n\t- You work 8 hour shifts on 3 days of the week.\n\t- You get paid biweekly.\n\t- Your job is to memorize our menu and restock when necessary.\n\t- Promote items low in stock.\n\t\tMenu:");
+    // createMenu();
+    // printMenu();
+    System.out.println("By typing in the numbers next to the items, put them in decreasing order by stock.");
+    String eSort = e.nextLine();
+
 
     // String[][] menu = {
     //   {"Item", "Price"},
