@@ -52,7 +52,8 @@ public class Customer {
   public void receipt() {
     System.out.println("\nSweet! Here is your receipt.");
     receipt.add(new ArrayList<String>());
-    receipt.get(receipt.size() - 1).add("Total");
+    // receipt.get(receipt.size() - 1).add("Total");
+    // receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
     for (int r = 0; r < receipt.size(); r++) {
       for (int s = 0; s < (receipt.get(r).size()); s++) {
         if (s == 0) {
@@ -66,12 +67,14 @@ public class Customer {
             double dolla = Double.parseDouble(pri);
             total += dolla;
           }
+          if (r == receipt.size() - 1) {
+            System.out.print(receipt.get(receipt.size() - 1).get(1));
+          }
         }
       }
-      receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
       System.out.println();
     }
-    // System.out.println(receipt);
+    // System.out.println("Your total is $" + total + "");
     // receipt.get(receipt.size() - 1).add(0, "Total");
     // System.out.println(receipt);
   }//end receipt
@@ -105,10 +108,11 @@ public class Customer {
     }//end catch
 
     if (budget<total){
-      System.out.println("\nYou don't have enough. Go dine and dash!");
+      System.out.println("\nYou don't have enough money. Go dine and dash!");
     }
     else{
-      System.out.println("\nYou're our 100th customer and are eligible for a prize if you win our game");
+      budget -= total;
+      System.out.println("\nYou paid and now have $" + budget + " remaining. Congrats! You're our 100th customer and you are eligible for a prize if you win our game.");
     }
 
     String s;
@@ -155,8 +159,8 @@ public class Customer {
 
         s = "You're almost out of the store, this is the crucial decision....";
         s = "How are you exiting?\n";
-        s += "\t1: out the window\n";
-        s += "\t2: stealing a kid's scooter and dipping\n";
+        s += "\t1: Out the window\n";
+        s += "\t2: Stealing a kid's scooter and dipping\n";
 
         System.out.print(s);
 
@@ -165,8 +169,8 @@ public class Customer {
           if (choice == 1){
             lives = lives - 1;
             System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
-            System.out.println("you have " + lives + " left");
-            System.out.println("you're spending the night in jail have fun... ");
+            System.out.println("You have " + lives + " left");
+            System.out.println("You're spending the night in jail. Have fun... ");
           }
           if (choice == 2){
             System.out.println("You successfully dined and dashed! You even scored an extra scooter!");
