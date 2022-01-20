@@ -94,14 +94,6 @@ public class Customer {
 
     try {
       order();
-        // if (k.contains(drink)) {
-        //   System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Anything else? ");
-        //
-        //   String orderMore = c.nextLine();
-        //   if (orderMore.toLowerCase().equals("yes")) {
-        //
-        //   }
-        // } //end contain drink
     }//end try
 
     catch (Exception e) {
