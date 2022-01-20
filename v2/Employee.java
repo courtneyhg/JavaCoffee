@@ -38,7 +38,7 @@ public class Employee {
     //   System.out.println("");
     // }
 
-
+    //making menu
     int one = (int) (Math.random() * 50);
     int two = (int) (Math.random() * 50);
     int three = (int) (Math.random() * 50);
@@ -59,18 +59,27 @@ public class Employee {
     System.out.println("8. Espresso con Panna - " + eight);
     System.out.println("9. Mocha - " + nine);
 
+    ArrayList stockOrder = new ArrayList<Integer>();
+    stockOrder.add(one);
+    stockOrder.add(two);
+    stockOrder.add(three);
+    stockOrder.add(four);
+    stockOrder.add(five);
+    stockOrder.add(six);
+    stockOrder.add(seven);
+    stockOrder.add(eight);
+    stockOrder.add(nine);
 
 
-    System.out.println("Enter the number in stock in ascending order. You have 30 seconds.");
+
+    System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
     long startTime = System.currentTimeMillis();
     String eSort = e.nextLine();
     long endTime = System.currentTimeMillis();
     System.out.println("That took " + ((endTime - startTime)/1000.0) + " seconds");
-
-
-    //Second try. If fail, then game ends.
-    if (((endTime - startTime)/1000.0) > 30){
-        System.out.println("You've somehow been so bad at your job that you are now working at below minimum wage. Mess up one more time, and you're fired.");
+    // //Second try. If fail, then game ends.
+    if (((endTime - startTime)/1000.0) > 40 || eSort.equals(StringifybubbleSort(stockOrder)) == false){
+        System.out.println("\n You've somehow been so bad at your job that you are now working at below minimum wage. Mess up one more time, and you're fired.");
         int one1 = (int) (Math.random() * 50);
         int two2 = (int) (Math.random() * 50);
         int three3 = (int) (Math.random() * 50);
@@ -90,54 +99,43 @@ public class Employee {
         System.out.println("7. Affogato - " + seven7);
         System.out.println("8. Espresso con Panna - " + eight8);
         System.out.println("9. Mocha - " + nine9);
-        System.out.println("Enter the number in stock in ascending order. You have 30 seconds.");
+        System.out.println("Enter the number in stock in ascending order. You have 40 seconds.");
         long startTime1 = System.currentTimeMillis();
         String eSor1t = e.nextLine();
         long endTime1 = System.currentTimeMillis();
         System.out.println("That took " + ((endTime1 - startTime1)/1000.0) + " seconds");
-        if (((endTime1 - startTime1)/1000.0) > 30){
+        if (((endTime1 - startTime1)/1000.0) > 40 || eSort.equals(StringifybubbleSort(stockOrder)) == false){
             System.out.println("You just got fired dummy.");
             System.exit(0);
         }
 
+        System.out.print("Nice job!");
     }
-
-
-ArrayList stockOrder = new ArrayList<Integer>();
-      stockOrder.add(one);
-      stockOrder.add(two);
-      stockOrder.add(three);
-      stockOrder.add(four);
-      stockOrder.add(five);
-      stockOrder.add(six);
-      stockOrder.add(seven);
-      stockOrder.add(eight);
-      stockOrder.add(nine);
-
-  //bubbleSort(stockOrder)
-  System.out.println(bubbleSort(stockOrder));
-    //System.out.println("Hello, " + eSort + "! Here are the basics:");
   }
 
-  public static void bubbleSortV( ArrayList<Integer> data )
-  {
-  for (int p=0; p < data.size(); p++){ //makes sure it goes through all passes
-  for (int i = data.size()-1; i>0; i--){ //for loop for each pass
-    //gets element at index
-    int bob = data.get(i);
-    int jeff = data.get(i-1);
-    //swap ints
-    if (bob < jeff){
-      data.set(i, jeff);
-      data.set(i-1, bob);
+
+
+
+//bubblesorts
+  public static void bubbleSortV( ArrayList<Integer> data ){
+  for (int p=0; p < data.size(); p++){
+    for (int i = data.size()-1; i>0; i--){
+      int bob = data.get(i);
+      int jeff = data.get(i-1);
+        if (bob < jeff){
+            data.set(i, jeff);
+             data.set(i-1, bob);
     }
   }
   }
   }
 
-  public static ArrayList<Integer> bubbleSort( ArrayList<Integer> input )
-  {
-  bubbleSortV(input);
-  return input;
+  public static String StringifybubbleSort( ArrayList<Integer> input ) {
+    String stuff = "";
+    bubbleSortV(input);
+    for (int i = 0; i < input.size(); i++){
+      stuff = stuff + input.get(i) + " ";
+    }
+  return stuff;
   }
-}//end class
+}
