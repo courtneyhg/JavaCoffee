@@ -74,7 +74,7 @@ public class Customer {
       }
       System.out.println();
     }
-    // System.out.println("Your total is $" + total + "");
+    System.out.println("\tYour total is $" + total + ".");
     // receipt.get(receipt.size() - 1).add(0, "Total");
     // System.out.println(receipt);
   }//end receipt
@@ -150,7 +150,7 @@ public class Customer {
           System.out.println("Wow, I guess you're good at stealing!");
         }
         if (choice == 2){
-          lives = lives - 1;
+          lives -= 1;
           System.out.println("Oops, you fell down and the employees are on your tail.");
           System.out.println("You lost a life, you have " + lives + " left.");
         }
@@ -167,10 +167,10 @@ public class Customer {
         try {
           choice = Integer.parseInt(c.nextLine());
           if (choice == 1){
-            lives = lives - 1;
+            lives -= 1;
             System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
             System.out.println("You have " + lives + " left");
-            System.out.println("You're spending the night in jail. Have fun... ");
+            System.out.println("You're spending the night in jail. Have fun...\nGAME OVER.");
           }
           if (choice == 2){
             System.out.println("You successfully dined and dashed! You even scored an extra scooter!");
