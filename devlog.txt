@@ -65,6 +65,7 @@ All :: worked on UML diagram, added more choices as the game went on, and fixed 
 2022-01-19
 Yuki :: imported some code she worked on into v2.
 Courtney :: fixed devlog format... and fixed the bubbleSort errors from when we tried to add it earlier. I finally made the dine and dash game after failing multiple times...
+Jason :: worked on the first job of the employee
 
 2022-01-20
 Yuki :: changed menu into 2d arraylist
