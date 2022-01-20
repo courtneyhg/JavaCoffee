@@ -157,25 +157,7 @@ public class Employee {
     // //Second try. If fail, then game ends.
     if (((endTime - startTime)/1000.0) > 40 || eSort.equals(StringifybubbleSort(stockOrder)) == false){
         System.out.println("\nYou've somehow been so bad at your job that you are now working at below minimum wage. Mess up one more time, and you're fired.");
-        int one1 = (int) (Math.random() * 50);
-        int two2 = (int) (Math.random() * 50);
-        int three3 = (int) (Math.random() * 50);
-        int four4 = (int) (Math.random() * 50);
-        int five5 = (int) (Math.random() * 50);
-        int six6 = (int) (Math.random() * 50);
-        int seven7 = (int) (Math.random() * 50);
-        int eight8 = (int) (Math.random() * 50);
-        int nine9 = (int) (Math.random() * 50);
-        System.out.println("Item - Stock");
-        System.out.println("1. Cold Brew - " + one1);
-        System.out.println("2. Latte - " + two2);
-        System.out.println("3. Cappucino - " + three3);
-        System.out.println("4. Cortado - " + four4);
-        System.out.println("5. Espresso Shot - " + five5);
-        System.out.println("6. Americano - " + six6);
-        System.out.println("7. Affogato - " + seven7);
-        System.out.println("8. Espresso con Panna - " + eight8);
-        System.out.println("9. Mocha - " + nine9);
+        justStock();
         System.out.println("Enter the number in stock in ascending order. You have 40 seconds.");
         long startTime1 = System.currentTimeMillis();
         String eSor1t = e.nextLine();
