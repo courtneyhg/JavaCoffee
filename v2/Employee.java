@@ -59,9 +59,49 @@ public class Employee {
     System.out.println("8. Espresso con Panna - " + eight);
     System.out.println("9. Mocha - " + nine);
 
-    System.out.println("enter the stuff in order");
 
+
+    System.out.println("Enter the number in stock in ascending order. You have 30 seconds.");
+    long startTime = System.currentTimeMillis();
     String eSort = e.nextLine();
+    long endTime = System.currentTimeMillis();
+    System.out.println("That took " + ((endTime - startTime)/1000.0) + " seconds");
+
+
+    //Second try. If fail, then game ends.
+    if (((endTime - startTime)/1000.0) > 30){
+        System.out.println("You've somehow been so bad at your job that you are now working at below minimum wage. Mess up one more time, and you're fired.");
+        int one1 = (int) (Math.random() * 50);
+        int two2 = (int) (Math.random() * 50);
+        int three3 = (int) (Math.random() * 50);
+        int four4 = (int) (Math.random() * 50);
+        int five5 = (int) (Math.random() * 50);
+        int six6 = (int) (Math.random() * 50);
+        int seven7 = (int) (Math.random() * 50);
+        int eight8 = (int) (Math.random() * 50);
+        int nine9 = (int) (Math.random() * 50);
+        System.out.println("Item - Stock");
+        System.out.println("1. Cold Brew - " + one1);
+        System.out.println("2. Latte - " + two2);
+        System.out.println("3. Cappucino - " + three3);
+        System.out.println("4. Cortado - " + four4);
+        System.out.println("5. Espresso Shot - " + five5);
+        System.out.println("6. Americano - " + six6);
+        System.out.println("7. Affogato - " + seven7);
+        System.out.println("8. Espresso con Panna - " + eight8);
+        System.out.println("9. Mocha - " + nine9);
+        System.out.println("Enter the number in stock in ascending order. You have 30 seconds.");
+        long startTime1 = System.currentTimeMillis();
+        String eSor1t = e.nextLine();
+        long endTime1 = System.currentTimeMillis();
+        System.out.println("That took " + ((endTime1 - startTime1)/1000.0) + " seconds");
+        if (((endTime1 - startTime1)/1000.0) > 30){
+            System.out.println("You just got fired dummy.");
+            System.exit(0);
+        }
+
+    }
+
 
 ArrayList stockOrder = new ArrayList<Integer>();
       stockOrder.add(one);
