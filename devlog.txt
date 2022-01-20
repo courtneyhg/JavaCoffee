@@ -1,19 +1,67 @@
-1/13/2022
-* We created repo and submitted goog form
-* We brainstormed final project ideas
-* We switched from supermarket idea to coffee shop idea because our team name duh
-* We made goog doc for final project proposal
-* Tweaked with some tester code
+Java Coffee
+Yuki Feng
+Jason Yang
+Courtney Huang
+pd 7
+--------------------------------------------------------------------------------
+Café Cat Caca
+- A game where you can be a customer or an employee in our cafe!
 
-1/14/22 - 1/17/22 (MLK Weekend)
-* Finalized propro
+/////////// Zone of Reflection \\\\\\\\\\\
+------------------------------------------
+OBSTACLES OVERCOME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+wow we so BOSS bc...
 
-1/18/2022
-* Courtney and Jason worked on Woo.java and Customer.java, using KTS to figure out the menu we wanted for the café. They fixed errors along the way.
-* Yuki worked on Employee.java while they were working to maximize efficiency. She tried to be careful with git merge errors but still came into them...sigh.
-* We all worked on the code (definitely ran into some merge errors but that's okay)
-* We added the menu, added a little launching game animation, added more choices as the game went on, and fixed some errors
-* also worked on UML diagram
+UNRESOLVED ISSUES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+blah blah pesky bug...
+maybe some of these will move into the Obs.Ovrcm section...
+
+COOL STUFF LEARNED
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+wow! oo!...
+
+MID-DEVELOPMENT DESIGN CHANGES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+we changed ___ to ___ bc...
+
+LESSONS LEARNED
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tales of wisdom gained...
+||||||||||||||||||||||||||||||||||||||||||
+
+
+
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
+==============================================================
+
+
+2022-01-13
+Jason, Yuki, Courtney :: We created repo and submitted goog form
+                      :: We brainstormed final project ideas
+                      :: We switched from supermarket idea to coffee shop idea because our team name duh
+                      :: We made goog doc for final project proposal
+                      :: Tweaked with some tester code
+
+2022-01-17
+Yuki :: added to propro
+Jason :: added to propro
+Courtney :: added to propro
+
+2022-01-18
+Courtney :: worked with Jason on Woo.java and Customer.java
+Jason :: worked with Courtney to figure out menu and how to turn the menu into a 2D array
+Yuki :: worked on Employee.java while they were working to maximize efficiency. She tried to be careful with git merge errors but still came into them...sigh.
+Yuki :: creating a launching animation for the game
+All :: worked on UML diagram, added more choices as the game went on, and fixed some errors
 
 1/19/22
-* Yuki imported some code she worked on into v2. 
+Yuki :: imported some code she worked on into v2.
+Courtney :: fixed devlog format...
