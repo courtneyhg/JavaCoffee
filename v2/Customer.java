@@ -94,19 +94,82 @@ public class Customer {
 
     try {
       order();
-        // if (k.contains(drink)) {
-        //   System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Anything else? ");
-        //
-        //   String orderMore = c.nextLine();
-        //   if (orderMore.toLowerCase().equals("yes")) {
-        //
-        //   }
-        // } //end contain drink
     }//end try
 
     catch (Exception e) {
-      System.out.println("Something went wrong. Exiting game.");
+      //System.out.println("Something went wrong. Exiting game.");
     }//end catch
+
+    if (budget<total){
+      System.out.println("\nYou don't have enough. Go dine and dash!");
+    }
+    else{
+      System.out.println("\nYou're our 100th customer and are eligible for a prize if you win our game");
+    }
+
+    String s;
+    int choice;
+    int lives = 3;
+
+    s = "Which way are you running?\n";
+    s += "\t1: left\n";
+    s += "\t2: right\n";
+
+    System.out.print(s);
+
+    try {
+      choice = Integer.parseInt(c.nextLine());
+      if (choice == 1){
+        lives = 2;
+        System.out.println("oof. wrong way, the employee is catching up!");
+        System.out.println("you lost a life, you have " + lives + " left");
+      }
+      if (choice == 2){
+        System.out.println("good turn, you're almost out of the cafe!");
+      }
+    }
+    catch (Exception e) {}
+
+      s = "Which way are you hopping?\n";
+      s += "\t1: over the chair\n";
+      s += "\t2: off the wall\n";
+
+      System.out.print(s);
+
+      try {
+        choice = Integer.parseInt(c.nextLine());
+        if (choice == 1){
+          System.out.println("wow, i guess you're good at stealing!");
+        }
+        if (choice == 2){
+          lives = lives - 1;
+          System.out.println("oops you fell down and the employees are on your tail");
+          System.out.println("you lost a life, you have " + lives + " left");
+        }
+      }
+      catch (Exception e) {}
+
+        s = "You're almost out of the store, this is the crucial decision....";
+        s = "How are you exiting?\n";
+        s += "\t1: out the window\n";
+        s += "\t2: stealing a kid's scooter and dipping\n";
+
+        System.out.print(s);
+
+        try {
+          choice = Integer.parseInt(c.nextLine());
+          if (choice == 1){
+            lives = lives - 1;
+            System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
+            System.out.println("you have " + lives + " left");
+            System.out.println("you're spending the night in jail have fun... ");
+          }
+          if (choice == 2){
+            System.out.println("You successfully dined and dashed! You even scored an extra scooter!");
+          }
+        }
+        catch (Exception e) {}
+
 
   }//end cplay
 } //end class

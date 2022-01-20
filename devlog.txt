@@ -64,4 +64,4 @@ All :: worked on UML diagram, added more choices as the game went on, and fixed 
 
 1/19/22
 Yuki :: imported some code she worked on into v2.
-Courtney :: fixed devlog format... and fixed the bubbleSort errors from when we tried to add it earlier
+Courtney :: fixed devlog format... and fixed the bubbleSort errors from when we tried to add it earlier. I finally made the dine and dash game after failing multiple times...
