@@ -69,8 +69,12 @@ public class Customer {
       System.out.println();
     }
     receipt.add(new ArrayList<String>());
-    receipt.get(receipt.size()).add(0, "Total");
-    receipt.get(receipt.size()).add(1, Double.toString(total));
+    System.out.println(receipt.size());
+    receipt.get(receipt.size() -1).add("Total | ");
+    receipt.get(receipt.size() - 1).add(Double.toString(total));
+    System.out.println(receipt);
+    // receipt.get(receipt.size() - 1).add(0, "Total");
+    // System.out.println(receipt);
   }//end receipt
 
   public void cplay() {
@@ -91,6 +95,7 @@ public class Customer {
     receipt.add(new ArrayList<String>());
     receipt.get(0).add(0, "Item");
     receipt.get(0).add(1, "Price");
+
 
     try {
       order();
@@ -139,12 +144,12 @@ public class Customer {
       try {
         choice = Integer.parseInt(c.nextLine());
         if (choice == 1){
-          System.out.println("wow, i guess you're good at stealing!");
+          System.out.println("Wow, I guess you're good at stealing!");
         }
         if (choice == 2){
           lives = lives - 1;
-          System.out.println("oops you fell down and the employees are on your tail");
-          System.out.println("you lost a life, you have " + lives + " left");
+          System.out.println("Oops, you fell down and the employees are on your tail.");
+          System.out.println("You lost a life, you have " + lives + " left.");
         }
       }
       catch (Exception e) {}
