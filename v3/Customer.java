@@ -156,8 +156,8 @@ public class Customer {
 
 
             s = "\nHow will you distract the chasing employee?\n";
-            s += "\t1: throwing flowers with thorns\n";
-            s += "\t2: play dead\n";
+            s += "\t1: Throwing flowers with thorns\n";
+            s += "\t2: Play dead\n";
 
             System.out.print(s);
 
