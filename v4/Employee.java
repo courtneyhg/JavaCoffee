@@ -6,7 +6,6 @@ public class Employee {
   Scanner e = new Scanner(System.in);
   ArrayList <ArrayList<String>> menu = new ArrayList<ArrayList<String>>();
   ArrayList stockOrder = new ArrayList<Integer>();
-  // ArrayList stockOrderCopy = new ArrayList<Integer>();
 
   public void createMenu() {
 
@@ -88,11 +87,18 @@ public class Employee {
      }
    }
 
+   public void takeOrder(){
+     double orderNumber = (int)(Math.random() * 10 +1);
+     System.out.println(orderNumber);
+     System.out.println("\n Your customer wants a ");
+   }
+
   public void eplay() {
     System.out.println("\nNice to have ya here. Let's get started.");
     System.out.print("First, what should I call you? ");
     String eName = e.nextLine();
     System.out.println("Hello, " + eName + "! Here are the basics:");
+
     System.out.println("\t- Your hourly wage is $15 per hour.\n\t- You work 8 hour shifts on 3 days of the week.\n\t- You get paid biweekly.\n\t- Your job is to memorize our menu and restock when necessary.\n\t- Promote items low in stock.\n\t\tMenu:");
     createMenu();
     printMenu();
@@ -138,9 +144,10 @@ public class Employee {
                 System.exit(0);
     }
     }
+    takeOrder();
+
+
   }
-
-
 
 
 //bubblesorts
@@ -166,85 +173,3 @@ public class Employee {
   return stuff + input.get(input.size() - 1);
   }
 }
-
-//         int one1 = (int) (Math.random() * 50);
-// int two2 = (int) (Math.random() * 50);
-// int three3 = (int) (Math.random() * 50);
-// int four4 = (int) (Math.random() * 50);
-// int five5 = (int) (Math.random() * 50);
-// int six6 = (int) (Math.random() * 50);
-// int seven7 = (int) (Math.random() * 50);
-// int eight8 = (int) (Math.random() * 50);
-// int nine9 = (int) (Math.random() * 50);
-// System.out.println("Item - Stock");
-// System.out.println("1. Cold Brew - " + one1);
-// System.out.println("2. Latte - " + two2);
-// System.out.println("3. Cappucino - " + three3);
-// System.out.println("4. Cortado - " + four4);
-// System.out.println("5. Espresso Shot - " + five5);
-// System.out.println("6. Americano - " + six6);
-// System.out.println("7. Affogato - " + seven7);
-// System.out.println("8. Espresso con Panna - " + eight8);
-// System.out.println("9. Mocha - " + nine9);
-
-
-
-//String eSort = e.nextLine();
-
-
-// String[][] menu = {
-//   {"Item", "Price"},
-//   {"1. Cold Brew", "$6.00"},
-//   {"2. Latte", "$6.75"},
-//   {"3. Cappucino", "$6.50"},
-//   {"4. Cortado", "$4.75"},
-//   {"5. Espresso Shot", "$4.00"},
-//   {"6. Americano", "$5.00"},
-//   {"7. Affogato", "$7.00"},
-//   {"8. Espresso con Panna", "$6.50"},
-//   {"9. Mocha", "$7.25"}
-// };
-//
-// for (int i = 0; i < (menu.length); i++) {
-//   for (int j = 0; j < (menu[i].length); j++) {
-//     if (j == 0) {
-//       System.out.print("\t" + menu[i][j] + " | ");
-//     }
-//     else {
-//       System.out.print(menu[i][j]);
-//     }
-//   }
-//   System.out.println("");
-// }
-
-//making menu
-// int one = (int) (Math.random() * 50);
-// int two = (int) (Math.random() * 50);
-// int three = (int) (Math.random() * 50);
-// int four = (int) (Math.random() * 50);
-// int five = (int) (Math.random() * 50);
-// int six = (int) (Math.random() * 50);
-// int seven = (int) (Math.random() * 50);
-// int eight = (int) (Math.random() * 50);
-// int nine = (int) (Math.random() * 50);
-// System.out.println("Item - Stock");
-// System.out.println("1. Cold Brew - " + one);
-// System.out.println("2. Latte - " + two);
-// System.out.println("3. Cappucino - " + three);
-// System.out.println("4. Cortado - " + four);
-// System.out.println("5. Espresso Shot - " + five);
-// System.out.println("6. Americano - " + six);
-// System.out.println("7. Affogato - " + seven);
-// System.out.println("8. Espresso con Panna - " + eight);
-// System.out.println("9. Mocha - " + nine);
-
-// ArrayList stockOrder = new ArrayList<Integer>();
-// stockOrder.add(one);
-// stockOrder.add(two);
-// stockOrder.add(three);
-// stockOrder.add(four);
-// stockOrder.add(five);
-// stockOrder.add(six);
-// stockOrder.add(seven);
-// stockOrder.add(eight);
-// stockOrder.add(nine);
