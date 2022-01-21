@@ -51,7 +51,7 @@ public class Customer {
 
   public void receipt() {
     System.out.println("\nSweet! Here is your receipt.");
-    receipt.add(new ArrayList<String>());
+    // receipt.add(new ArrayList<String>());
     // receipt.get(receipt.size() - 1).add("Total");
     // receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
     for (int r = 0; r < receipt.size(); r++) {
@@ -66,9 +66,6 @@ public class Customer {
             pri = pri.substring(1);
             double dolla = Double.parseDouble(pri);
             total += dolla;
-          }
-          if (r == receipt.size() - 1) {
-            System.out.print(receipt.get(receipt.size() - 1).get(1));
           }
         }
       }
