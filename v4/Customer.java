@@ -209,7 +209,7 @@ public class Customer {
               catch (Exception e) {}
 
             s = "\nYou're almost out of the store, this is the crucial decision....";
-            s = "How are you exiting?\n";
+            s = "\nHow are you exiting?\n";
             s += "\t1: Out the window\n";
             s += "\t2: Stealing a kid's scooter and dipping\n";
 
@@ -220,8 +220,10 @@ public class Customer {
               if (choice == 1){
                 lives -= 1;
                 System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
-                System.out.println("You have " + lives + " left");
+                System.out.println("You have " + lives + " life left, but we reached the end so that doesn't matter");
+                System.out.println("You got caught anyway whoops");
                 System.out.println("You're spending the night in jail. Have fun...\nGAME OVER.");
+                System.exit(0);
               }
               if (choice == 2){
                 System.out.println("You successfully dined and dashed! You even scored an extra scooter!");
