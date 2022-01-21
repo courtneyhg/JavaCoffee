@@ -74,7 +74,7 @@ public class Customer {
       }
       System.out.println();
     }
-    System.out.println("\tYour total is $" + total + ".");
+    System.out.println("Your total is $" + total + ".");
     // receipt.get(receipt.size() - 1).add(0, "Total");
     // System.out.println(receipt);
   }//end receipt
@@ -117,8 +117,8 @@ public class Customer {
 
       while(lives != 0){
         s = "\nWhich way are you running?\n";
-        s += "\t1: left\n";
-        s += "\t2: right\n";
+        s += "\t1: Left\n";
+        s += "\t2: Right\n";
 
         System.out.print(s);
 
@@ -136,8 +136,8 @@ public class Customer {
         catch (Exception e) {}
 
           s = "\nWhich way are you hopping?\n";
-          s += "\t1: over the chair\n";
-          s += "\t2: off the wall\n";
+          s += "\t1: Over the chair\n";
+          s += "\t2: Off the wall\n";
 
           System.out.print(s);
 
