@@ -73,40 +73,8 @@ public class Customer {
     receipt.get(receipt.size()).add(1, Double.toString(total));
   }//end receipt
 
-  public void cplay() {
-    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
 
-    for (int i = 0; i < (menu.length); i++) {
-      for (int j = 0; j < (menu[i].length); j++) {
-        if (j == 0) {
-          System.out.print("\t" + menu[i][j] + " | ");
-        }
-        else {
-          System.out.print(menu[i][j]);
-        }
-      }
-      System.out.println();
-    }
-
-    receipt.add(new ArrayList<String>());
-    receipt.get(0).add(0, "Item");
-    receipt.get(0).add(1, "Price");
-
-    try {
-      order();
-    }//end try
-
-    catch (Exception e) {
-      //System.out.println("Something went wrong. Exiting game.");
-    }//end catch
-
-    if (budget<total){
-      System.out.println("\nYou don't have enough. Go dine and dash!");
-    }
-    else{
-      System.out.println("\nYou're our 100th customer and are eligible for a prize if you win our game");
-    }
-
+  public void dineAndDash(){
     String s;
     int choice;
     int lives = 3;
@@ -161,7 +129,7 @@ public class Customer {
           if (choice == 1){
             lives = lives - 1;
             System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
-            System.out.println("you have " + lives + " left");
+            System.out.println("you have " + lives + " lives left");
             System.out.println("you're spending the night in jail have fun... ");
           }
           if (choice == 2){
@@ -169,6 +137,49 @@ public class Customer {
           }
         }
         catch (Exception e) {}
+  }
+
+  public void cplay() {
+    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
+
+    for (int i = 0; i < (menu.length); i++) {
+      for (int j = 0; j < (menu[i].length); j++) {
+        if (j == 0) {
+          System.out.print("\t" + menu[i][j] + " | ");
+        }
+        else {
+          System.out.print(menu[i][j]);
+        }
+      }
+      System.out.println();
+    }
+
+    receipt.add(new ArrayList<String>());
+    receipt.get(0).add(0, "Item");
+    receipt.get(0).add(1, "Price");
+
+    try {
+      order();
+      if (budget<total){
+        System.out.println("\nYou don't have enough. Go dine and dash!");
+        dineAndDash();
+      }
+      else{
+        break;
+      }
+    }//end try
+
+    catch (Exception e) {
+      System.out.println("\nYou're our 100th customer and are eligible for a prize if you win our game");
+      //System.out.println("Something went wrong. Exiting game.");
+    }//end catch
+
+
+    // else{
+    //   System.out.println("\nYou're our 100th customer and are eligible for a prize if you win our game");
+    //   System.exit(0);
+    // }
+
 
 
   }//end cplay
