@@ -11,6 +11,7 @@ public class Customer {
   ArrayList <ArrayList<String>> receipt = new ArrayList<ArrayList<String>>();
   double total;
 
+  TiltMaze game1 = new TiltMaze();
   String[][] menu = {
     {"Item", "Price"},
     {"1. Cold Brew", "$6.00"},
@@ -51,7 +52,7 @@ public class Customer {
 
   public void receipt() {
     System.out.println("\nSweet! Here is your receipt.");
-    receipt.add(new ArrayList<String>());
+    // receipt.add(new ArrayList<String>());
     // receipt.get(receipt.size() - 1).add("Total");
     // receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
     for (int r = 0; r < receipt.size(); r++) {
@@ -67,14 +68,11 @@ public class Customer {
             double dolla = Double.parseDouble(pri);
             total += dolla;
           }
-          if (r == receipt.size() - 1) {
-            System.out.print(receipt.get(receipt.size() - 1).get(1));
-          }
         }
       }
       System.out.println();
     }
-    System.out.println("\tYour total is $" + total + ".");
+    System.out.println("Your total is $" + total + ".");
     // receipt.get(receipt.size() - 1).add(0, "Total");
     // System.out.println(receipt);
   }//end receipt
@@ -117,8 +115,8 @@ public class Customer {
 
       while(lives != 0){
         s = "\nWhich way are you running?\n";
-        s += "\t1: left\n";
-        s += "\t2: right\n";
+        s += "\t1: Left\n";
+        s += "\t2: Right\n";
 
         System.out.print(s);
 
@@ -136,8 +134,8 @@ public class Customer {
         catch (Exception e) {}
 
           s = "\nWhich way are you hopping?\n";
-          s += "\t1: over the chair\n";
-          s += "\t2: off the wall\n";
+          s += "\t1: Over the chair\n";
+          s += "\t2: Off the wall\n";
 
           System.out.print(s);
 
@@ -156,8 +154,8 @@ public class Customer {
 
 
             s = "\nHow will you distract the chasing employee?\n";
-            s += "\t1: throwing flowers with thorns\n";
-            s += "\t2: play dead\n";
+            s += "\t1: Throwing flowers with thorns\n";
+            s += "\t2: Play dead\n";
 
             System.out.print(s);
 
@@ -238,6 +236,8 @@ public class Customer {
     else{
       budget -= total;
       System.out.println("\nYou paid and now have $" + budget + " remaining. Congrats! You're our 100th customer and you are eligible for a prize if you win our game.");
+      System.out.println("\tThis game is called the Tilt Maze Puzzle. Your goal is to move the 'o' character to the '*' character at the end of the maze.\nGood Luck!");
+      game1.mazePlay();
     }
 
 
