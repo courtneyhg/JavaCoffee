@@ -86,21 +86,22 @@ public class Employee {
    } //end printStock
 
    public void takeOrder(){
-     double rr = (Math.random() * 10 + 1);
-     int orderNumber = (int)Math.round(rr);
+     double rr = (Math.random() * 10) + 1.0;
+     int orderNumber = (int) rr;
      System.out.println("\nYour customer wants to order a number 0" + orderNumber);
      createMenu();
      String answer = (menu.get(orderNumber).get(0)).substring(4);
      System.out.println("What drink is number 0" + orderNumber + "?");
      String userAnswer = e.nextLine();
      if (!(userAnswer.equals(answer))){ //if wrong first time
-       System.out.println("Making the coffee . . .");
-       System.out.println("You messed up the customer's order. They throw the coffee at you, assault you with not so PG-13 words, and leave an angry review. Mess up one more time, and you're fired.");
+       System.out.println(" \n Making the coffee . . .");
+       System.out.println(" \n You messed up the customer's order. They throw the coffee at you, assault you with not so PG-13 words, and leave an angry review. Mess up one more time, and you're fired.");
        takeOrder2(); //last chance to do order correctly
-     }  else {
-       System.out.println("Correct. \n Making the coffee . . .");
-
+       //catchtheRobr();
+     }  else{ //if right
+       System.out.println("\n Making the coffee . . .");
        //error for thread.sleep() but not important piece of code
+
        // int l = 0;
        // while (l < 25) {
        //   System.out.print(" - ");
@@ -113,10 +114,37 @@ public class Employee {
        //   l++;
        // }
 
+       catchtheRobr();
+
      }
 
 
+
+
+
    } //end takeOrder
+
+
+   public void takeOrder2(){
+     double rr = (Math.random() * 10) + 1.0;
+     int orderNumber = (int) rr;
+     System.out.println("\nAnother customer wants to order a number 0" + orderNumber);
+     createMenu();
+     String answer = (menu.get(orderNumber).get(0)).substring(4);
+     System.out.println("What drink is number 0" + orderNumber + "?");
+     String userAnswer = e.nextLine();
+     if (!(userAnswer.equals(answer))){
+       System.out.println("Wrong again. You disappoint me. You're fired. Get out of here . . .");
+       System.exit(0);
+     } else {
+       System.out.println("Everyone makes a mistake in this business. Good thing you've gotten better . . .");
+       System.out.println("\n . . . Making the coffee . . . ");
+   }
+ } //end takeOrder2
+
+  public void catchtheRobr(){
+    System.out.println("tst");
+  }
 
 
    //bubble sorts
@@ -142,21 +170,6 @@ public class Employee {
    return stuff + input.get(input.size() - 1);
    }
 
-   public void takeOrder2(){
-     double rr = (Math.random() * 10 + 1);
-     int orderNumber = (int)Math.round(rr);
-     System.out.println("\nAnother customer wants to order a number 0" + orderNumber);
-     createMenu();
-     String answer = (menu.get(orderNumber).get(0)).substring(4);
-     System.out.println("What drink is number 0" + orderNumber + "?");
-     String userAnswer = e.nextLine();
-     if (!(userAnswer.equals(answer))){
-       System.out.println("Wrong again. You disappoint me. You're fired. Get out of here . . .");
-       System.exit(0);
-     } else {
-       System.out.println("Everyone makes a mistake in this business. Good thing you've gotten better . . .");
-   }
- } //end takeOrder2
 
 
 
@@ -164,7 +177,7 @@ public class Employee {
 
 
 
-  public void eplay() {
+  public void eplay() { //main method to use
     System.out.println("\nNice to have ya here. Let's get started.");
     System.out.print("First, what should I call you? ");
     String eName = e.nextLine();
