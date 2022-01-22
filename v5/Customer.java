@@ -79,7 +79,7 @@ public class Customer {
   }//end receipt
 
   public void cplay() {
-    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
+    System.out.println("\nYour budget is $" + budget + ".\nTake a look at our menu below!\n");
 
     for (int i = 0; i < (menu.length); i++) {
       for (int j = 0; j < (menu[i].length); j++) {

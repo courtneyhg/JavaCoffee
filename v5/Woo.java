@@ -8,6 +8,7 @@ public class Woo {
     // Woo back = new Woo();
     Customer bob = new Customer();
     Employee joe = new Employee();
+    boolean a = true;
     System.out.println("\nLaunching Game...");
     //commenting out animationjust to save time for now whenever we run to fix errors
     // int l = 0;
@@ -27,19 +28,36 @@ public class Woo {
     // }
 
     System.out.println("\n\nWelcome to Café Cat Caca! What are you here for?\n\t1. A customer.\n\t2. The new employee.");
-    System.out.print("I am: ");
+    System.out.println("I am: ");
 
-    try {
+    while (a){ //so game doesn't exit if user chooses something other than 1/2
       String role = g.nextLine();
-      if ( role.equals("1") ) {
+      if (role.equals("1")){
+        System.out.println("\nYou chose to be the new a Customer.");
         bob.cplay();
+        System.exit(0);
       }
-      else if ( role.equals("2") ){
+      if (role.equals("2")){
+        System.out.println("You chose to be the new Employee.");
         joe.eplay();
+        System.exit(0);
       }
+      System.out.println("Choose a valid option.");
     }
-    catch (Exception e) {
-      System.out.println("Something went wrong. Exiting game.");
-    }
+
+
+
+    // try {
+    //   String role = g.nextLine();
+    //   if ( role.equals("1") ) {
+    //     bob.cplay();
+    //   }
+    //   else if ( role.equals("2") ){
+    //     joe.eplay();
+    //   }
+    // }
+    // catch (Exception e) {
+    //   System.out.println("Something went wrong. Exiting game.");
+    // }
   }//end main
 }//end class

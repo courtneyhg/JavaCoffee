@@ -91,15 +91,17 @@ public class Employee {
      System.out.println("\nYour customer wants to order a number 0" + orderNumber);
      createMenu();
      String answer = (menu.get(orderNumber).get(0)).substring(4);
-     System.out.println("What drink is number 0" + orderNumber + "?");
+     // System.out.println(answer);
+     System.out.println("\nWhat drink is number 0" + orderNumber + "?");
      String userAnswer = e.nextLine();
      if (!(userAnswer.equals(answer))){ //if wrong first time
-       System.out.println(" \n Making the coffee . . .");
-       System.out.println(" \n You messed up the customer's order. They throw the coffee at you, assault you with not so PG-13 words, and leave an angry review. Mess up one more time, and you're fired.");
+       System.out.println("\n. . . Making a " + userAnswer + " . . .");
+       System.out.println("\n You messed up the customer's order. They throw the coffee at you, assault you with not so PG-13 words, and leave an angry review. Mess up one more time, and you're fired.");
        takeOrder2(); //last chance to do order correctly
        //catchtheRobr();
      }  else { //if right
-       System.out.println("\n Making the coffee . . .");
+       System.out.println("\n. . .Making the coffee . . .");
+       System.out.println("\n. . .You place the coffee on the counter . . .");
 
        //error for thread.sleep() but not important piece of code
        // int l = 0;
@@ -131,19 +133,21 @@ public class Employee {
      System.out.println("\nAnother customer wants to order a number 0" + orderNumber);
      createMenu();
      String answer = (menu.get(orderNumber).get(0)).substring(4);
-     System.out.println("What drink is number 0" + orderNumber + "?");
+     System.out.println("\nWhat drink is number 0" + orderNumber + "?");
      String userAnswer = e.nextLine();
      if (!(userAnswer.equals(answer))){
        System.out.println("Wrong again. You disappoint me. You're fired. Get out of here . . .");
        System.exit(0);
      } else {
        System.out.println("Everyone makes a mistake in this business. Good thing you've gotten better . . .");
-       System.out.println("\n . . . Making the coffee . . . ");
+       System.out.println("\n. . . Making a " + userAnswer + " . . .");
+       catchtheRobr();
    }
  } //end takeOrder2
 
   public void catchtheRobr(){
-    System.out.println("tst");
+    System.out.println("\n Uh-oh! The customer decided to steal the coffee without paying!!! What do you do?!?! \n\t1. Not my problem. Let him go.\n\t2. Try to catch dem.");
+
   }
 
 
