@@ -98,10 +98,10 @@ public class Employee {
        System.out.println(" \n You messed up the customer's order. They throw the coffee at you, assault you with not so PG-13 words, and leave an angry review. Mess up one more time, and you're fired.");
        takeOrder2(); //last chance to do order correctly
        //catchtheRobr();
-     }  else{ //if right
+     }  else { //if right
        System.out.println("\n Making the coffee . . .");
-       //error for thread.sleep() but not important piece of code
 
+       //error for thread.sleep() but not important piece of code
        // int l = 0;
        // while (l < 25) {
        //   System.out.print(" - ");
@@ -125,7 +125,7 @@ public class Employee {
    } //end takeOrder
 
 
-   public void takeOrder2(){
+   public void takeOrder2(){ //only happens if first order is wrong
      double rr = (Math.random() * 10) + 1.0;
      int orderNumber = (int) rr;
      System.out.println("\nAnother customer wants to order a number 0" + orderNumber);
