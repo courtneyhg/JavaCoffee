@@ -11,7 +11,6 @@ public class Customer {
   ArrayList <ArrayList<String>> receipt = new ArrayList<ArrayList<String>>();
   double total;
 
-  TiltMaze game1 = new TiltMaze();
   String[][] menu = {
     {"Item", "Price"},
     {"1. Cold Brew", "$6.00"},
@@ -67,6 +66,7 @@ public class Customer {
             pri = pri.substring(1);
             double dolla = Double.parseDouble(pri);
             total += dolla;
+            Math.round(total);
           }
         }
       }
@@ -235,9 +235,21 @@ public class Customer {
     }
     else{
       budget -= total;
+      budget = Math.round(budget);
       System.out.println("\nYou paid and now have $" + budget + " remaining. Congrats! You're our 100th customer and you are eligible for a prize if you win our game.");
-      System.out.println("\tThis game is called the Tilt Maze Puzzle. Your goal is to move the 'o' character to the '*' character at the end of the maze.\nGood Luck!");
-      game1.mazePlay();
+      System.out.println("\tThis game is called the Tilt Maze Puzzle. Your goal is to move the '*' character to the 'o' character at the end of the maze.\nGood Luck!");
+      System.out.println(maze.size());
+      // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
+      // maze.add(new ArrayList<String>(Arrays.asList("_________")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|*_ |   |")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|      _|")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|  | _  |")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|   _  _|")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|    | o|")));
+      // maze.add(new ArrayList<String>(Arrays.asList("‾‾‾‾‾‾‾‾‾")));
+      // for (int row = 0; row <maze.size(); row++) {
+      //     System.out.println(maze.get(row));
+      // }
     }
 
 
