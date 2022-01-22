@@ -21,10 +21,12 @@ UNRESOLVED ISSUES
 blah blah pesky bug...
 maybe some of these will move into the Obs.Ovrcm section...
 
+
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 wow! oo!...
-* the animation to launch the game using Thread.sleep
+* the animation to launch the game using Thread.sleep()
+* learned to manipulate 2d ArrayList
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,3 +77,10 @@ Jason :: worked on the first job of the employee
 Yuki :: changed menu into 2d arraylist
 Courtney :: fixed the issues with the dine and dash game
 Jason :: 99% sure I fixed the sorting
+
+2022-01-21
+Yuki :: made maze.txt and started developing the game for customer to win prize
+
+2022-01-22
+Courtney :: updated v5 with new versions
+Yuki :: fixed maze and got the right direction to work
