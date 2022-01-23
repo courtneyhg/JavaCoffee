@@ -84,6 +84,6 @@ Yuki :: made maze.txt and started developing the game for customer to win prize
 2022-01-22
 Courtney :: updated v5 with new versions
 Yuki :: fixed maze and got the right direction to work
-Jason :: added rest of jobs to employee
+Jason :: added rest of jobs to employee. started to add invalid choices
 
 
