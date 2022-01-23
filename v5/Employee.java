@@ -139,10 +139,10 @@ public class Employee {
      System.out.println("\nWhat drink is number 0" + orderNumber + "?");
      String userAnswer = e.nextLine();
      if (!(userAnswer.equals(answer))){
-       System.out.println("Wrong again. You disappoint me. You're fired. Get out of here . . .");
+       System.out.println("\nWrong again. You disappoint me. You're fired. Get out of here . . .");
        System.exit(0);
      } else {
-       System.out.println("Everyone makes a mistake in this business. Good thing you've gotten better . . .");
+       System.out.println("\nEveryone makes a mistake in this business. Good thing you've gotten better . . .");
        System.out.println("\n. . . Making a " + userAnswer + " . . .");
        catchtheRobr();
    }
@@ -244,8 +244,8 @@ public class Employee {
           l++;
         }
 
-    System.out.println("By typing in the numbers next to the items, put them in increasing order by stock.");
-    System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
+    System.out.println("\nBy typing in the numbers next to the items, put them in increasing order by stock.");
+    System.out.println("\nEnter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
     long startTime = System.currentTimeMillis();
     String eSort = e.nextLine();
     long endTime = System.currentTimeMillis();
