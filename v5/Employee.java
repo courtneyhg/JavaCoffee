@@ -146,9 +146,46 @@ public class Employee {
  } //end takeOrder2
 
   public void catchtheRobr(){
-    System.out.println("\n Uh-oh! The customer decided to steal the coffee without paying!!! What do you do?!?! \n\t1. Not my problem. Let him go.\n\t2. Try to catch dem.");
-
+    boolean a = true;
+    System.out.println("\n Uh-oh! The customer decided to steal the coffee without paying!!! What do you do?!?! \n\t1. Not my problem. Let dem go.\n\t2. Try to catch dem.");
+    while (a){
+    String choice = e.nextLine();
+    if (choice.equals("2")){
+        catchtheRobrgame();
+        a = false;
+    }
+    if (choice.equals("1")){
+      System.out.println("\n You literally just stood there while they were getting away . . . You're fired . . .");
+      System.exit(0);
+    }
   }
+} //end catchtheRobr
+
+  public void catchtheRobrgame(){
+    System.out.println("\n You look at the register and see a paper saying 'Door Lock Code' with a string a numbers following it. \n\n Type in the following numbers you see to lock the door! Hurry, you have 5 seconds!!!");
+    int uwu = (int) (Math.random() * 10);
+    int owo = (int) (Math.random() * 10);
+    int owu = (int) (Math.random() * 10);
+    int uwo = (int) (Math.random() * 10);
+    String noombas = String.valueOf(uwu) + " " + String.valueOf(owo) + " " + String.valueOf(owu) + " " + String.valueOf(uwo);
+    System.out.println(noombas);
+    Long startTime = System.currentTimeMillis();
+    String userAnswer = e.nextLine();
+    Long endTime = System.currentTimeMillis();
+
+    if (userAnswer.equals(noombas)){
+      if (((endTime - startTime)/1000.0) > 5){
+        System.out.println("\n . . . You were too slow and they got away . . . You just got fired . . .");
+        System.exit(0);
+      } else {
+        System.out.println("\n You entered the pin correctly and fast enough that the door locked before the thief was able to escape. You call the police and they come and arrest thy noob. For doing such an excellent job, I am giving my position of Manager to you. (It's about time I retired)");
+        System.exit(0);
+      }
+    } else {
+       System.out.println("\n . . . You entered the wrong pin and the thief got away . . . I cannot have someone as blind as you be working here . . . You're fired, dummy.");
+       System.exit(0);
+    }
+  } //end catchtheRobrgame
 
 
    //bubble sorts
@@ -195,45 +232,45 @@ public class Employee {
     justStock();
     printStock();
 
-    // System.out.println("By typing in the numbers next to the items, put them in decreasing order by stock.");
-    // System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
-    // long startTime = System.currentTimeMillis();
-    // String eSort = e.nextLine();
-    // long endTime = System.currentTimeMillis();
-    // System.out.println("That took " + ((endTime - startTime)/1000.0) + " seconds.");
-    //
-    // ArrayList stockOrderCopy = new ArrayList<Integer>(stockOrder);
-    //
-    //
-    //
-    //
-    // if (eSort.equals(StringifybubbleSort(stockOrder)) == true && ((endTime - startTime)/1000.0) <= 40 ){
-    //   System.out.print("Pog. You completed your first job.");
-    //   System.out.println("\nThis is the new stock order.");
-    //   System.out.println(StringifybubbleSort(stockOrder));
-    //   System.out.println("Let's take customer's order");
-    //   // continue(); //make later(take custoemr order, stop them from dine and dash)
-    // } else {
-    //     ogStock(stockOrderCopy);
-    //
-    //     System.out.println("\nYou either took more than 40 seconds or ordered the stock wrong. Your wage has been reduced to beloe minimum wage now, dummy. You have one more chance before you are fired");
-    //     System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
-    //     long startTime2 = System.currentTimeMillis();
-    //     String eSort2 = e.nextLine();
-    //     long endTime2 = System.currentTimeMillis();
-    //     System.out.println("\nThat took " + ((endTime2 - startTime2)/1000.0) + " seconds.");
-    //
-    //     //sees if user's second try is corret
-    //
-    //     if (eSort2.equals(StringifybubbleSort(stockOrder)) == true && ((endTime2 - startTime2)/1000.0) <= 40 ){
-    //         System.out.println("You've succeeded at your first job . . . barely . . .");
-    //       } else {
-    //             System.out.println("\nYou just got fired, dummy.");
-    //             System.out.println("\nHere is how you are supposed to do it!");
-    //             printStock();
-    //             System.exit(0);
-    // }
-    // }
+    System.out.println("By typing in the numbers next to the items, put them in increasing order by stock.");
+    System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
+    long startTime = System.currentTimeMillis();
+    String eSort = e.nextLine();
+    long endTime = System.currentTimeMillis();
+    System.out.println("That took " + ((endTime - startTime)/1000.0) + " seconds.");
+
+    ArrayList stockOrderCopy = new ArrayList<Integer>(stockOrder);
+
+
+
+
+    if (eSort.equals(StringifybubbleSort(stockOrder)) == true && ((endTime - startTime)/1000.0) <= 40 ){
+      System.out.print("Pog. You completed your first job.");
+      System.out.println("\nThis is the new stock order.");
+      System.out.println(StringifybubbleSort(stockOrder));
+      System.out.println("Let's take customer's order");
+      // continue(); //make later(take custoemr order, stop them from dine and dash)
+    } else {
+        ogStock(stockOrderCopy);
+
+        System.out.println("\nYou either took more than 40 seconds or ordered the stock wrong. Your wage has been reduced to beloe minimum wage now, dummy. You have one more chance before you are fired");
+        System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
+        long startTime2 = System.currentTimeMillis();
+        String eSort2 = e.nextLine();
+        long endTime2 = System.currentTimeMillis();
+        System.out.println("\nThat took " + ((endTime2 - startTime2)/1000.0) + " seconds.");
+
+        //sees if user's second try is corret
+
+        if (eSort2.equals(StringifybubbleSort(stockOrder)) == true && ((endTime2 - startTime2)/1000.0) <= 40 ){
+            System.out.println("You've succeeded at your first job . . . barely . . .");
+          } else {
+                System.out.println("\nYou just got fired, dummy.");
+                System.out.println("\nHere is how you are supposed to do it!");
+                printStock();
+                System.exit(0);
+    }
+    }
     takeOrder();
 
   } //end eplay
