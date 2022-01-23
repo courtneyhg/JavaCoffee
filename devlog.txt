@@ -27,6 +27,7 @@ COOL STUFF LEARNED
 wow! oo!...
 * the animation to launch the game using Thread.sleep()
 * learned to manipulate 2d ArrayList
+* how to pause the program for a couple of seconds
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
