@@ -41,27 +41,26 @@ public class Customer {
       receipt.get(drinkCount).add(menu[p][1]);
       System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Would you like anything else?");
       System.out.println("\t1. Yes\n\t2. No");
-      String orderMore = c.nextLine();
-      while ((!(orderMore.equals("1")))){
-        while((!(orderMore.equals("2")))){
-            System.out.println("Please enter a valid option");
-            orderMore = c.nextLine();
-          }
+      while (true) {
+        String orderMore = c.nextLine();
+        if (orderMore.equals("1")) {
+          order();
+          break;
         }
-      if (orderMore.equals("1")) {
-        order();
-      }
-      else if (orderMore.equals("2")) {
-        receipt();
-      }
-    }
+        else if (orderMore.equals("2")) {
+          receipt();
+          break;
+        }
+        System.out.print("Choose a valid option:");
+      } //end while
+    } //end k.contains(drink)
   }//end order
 
   public void receipt() {
     System.out.println("\nSweet! Here is your receipt.");
-    receipt.add(new ArrayList<String>());
-    receipt.get(receipt.size() - 1).add("Total");
-    receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
+    // receipt.add(new ArrayList<String>());
+    // receipt.get(receipt.size() - 1).add("Total");
+    // receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
     for (int r = 0; r < receipt.size(); r++) {
       for (int s = 0; s < (receipt.get(r).size()); s++) {
         if (s == 0) {
@@ -80,8 +79,8 @@ public class Customer {
       System.out.println();
     }
     System.out.println("Your total is $" + total + ".");
-    receipt.get(receipt.size() - 1).add(0, "Total");
-    System.out.println(receipt);
+    // receipt.get(receipt.size() - 1).add(0, "Total");
+    // System.out.println(receipt);
   }//end receipt
 
   public void cplay() {
@@ -107,9 +106,7 @@ public class Customer {
     try {
       order();
     }//end try
-
     catch (Exception e) {
-      System.exit(0);
     }//end catch
 
     if (budget<total){
@@ -118,7 +115,6 @@ public class Customer {
       String s;
       int choice;
       int lives = 3;
-
 
       while(lives != 0){
         s = "\nWhich way are you running?\n";
