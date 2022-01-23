@@ -42,6 +42,12 @@ public class Customer {
       System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Would you like anything else?");
       System.out.println("\t1. Yes\n\t2. No");
       String orderMore = c.nextLine();
+      while ((!(orderMore.equals("1")))){
+        while((!(orderMore.equals("2")))){
+            System.out.println("Please enter a valid option");
+            orderMore = c.nextLine();
+          }
+        }
       if (orderMore.equals("1")) {
         order();
       }
@@ -123,6 +129,10 @@ public class Customer {
 
         try {
           choice = Integer.parseInt(c.nextLine());
+          while (choice < 1 || choice > 2) {
+                System.out.println("Please enter a valid option");
+                choice = c.nextInt();
+            }
           if (choice == 1){
             lives = 2;
             System.out.println("oof. wrong way, the employee is catching up!");
@@ -142,6 +152,10 @@ public class Customer {
 
           try {
             choice = Integer.parseInt(c.nextLine());
+            while (choice < 1 || choice > 2) {
+                  System.out.println("Please enter a valid option");
+                  choice = c.nextInt();
+              }
             if (choice == 1){
               System.out.println("Wow, I guess you're good at stealing!");
             }
@@ -162,6 +176,10 @@ public class Customer {
 
             try {
               choice = Integer.parseInt(c.nextLine());
+              while (choice < 1 || choice > 2) {
+                    System.out.println("Please enter a valid option");
+                    choice = c.nextInt();
+                }
               if (choice == 1){
                 System.out.println("Good move! You have momentarily stopped the employee!");
               }
@@ -189,6 +207,10 @@ public class Customer {
 
               try {
                 choice = Integer.parseInt(c.nextLine());
+                while (choice < 1 || choice > 2) {
+                      System.out.println("Please enter a valid option");
+                      choice = c.nextInt();
+                  }
                 if (choice == 1){
                   System.out.println("No one can find WALDO!");
                 }
@@ -217,6 +239,10 @@ public class Customer {
 
             try {
               choice = Integer.parseInt(c.nextLine());
+              while (choice < 1 || choice > 2) {
+                    System.out.println("Please enter a valid option");
+                    choice = c.nextInt();
+                }
               if (choice == 1){
                 lives -= 1;
                 System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
@@ -241,7 +267,7 @@ public class Customer {
     }
     else{
       budget -= total;
-      budget = Math.round(budget);
+      budget =  Math.round(budget * 100) / 100.0;
       System.out.println("\nYou paid and now have $" + budget + " remaining. Congrats! You're our 100th customer and you are eligible for a prize if you win our game.");
       System.out.println("\nThis game is called the Tilt Maze Puzzle. Your goal is to move the '*' character to the 'o' character at the end of the maze.\nGood Luck!");
       // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();

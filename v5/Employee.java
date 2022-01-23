@@ -17,34 +17,34 @@ public class Employee {
     menu.get(0).add(2, "Stock");
     menu.get(1).add(0, "01. Cold Brew");
     menu.get(1).add(1, "6.00");
-    menu.get(1).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(1).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(2).add(0, "02. Latte");
     menu.get(2).add(1, "$6.75");
-    menu.get(2).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(2).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(3).add(0, "03. Cappucino");
     menu.get(3).add(1, "$6.50");
-    menu.get(3).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(3).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(4).add(0, "04. Cortado");
     menu.get(4).add(1, "$4.75");
-    menu.get(4).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(4).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(5).add(0, "05. Espresso Shot");
     menu.get(5).add(1, "$4.00");
-    menu.get(5).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(5).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(6).add(0, "06. Americano");
     menu.get(6).add(1, "$5.00");
-    menu.get(6).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(6).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(7).add(0, "07. Affogato");
     menu.get(7).add(1, "$7.00");
-    menu.get(7).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(7).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(8).add(0, "08. Espresso con Panna");
     menu.get(8).add(1, "$6.55");
-    menu.get(8).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(8).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(9).add(0, "09. Mocha");
     menu.get(9).add(1, "$7.25");
-    menu.get(9).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(9).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
     menu.get(10).add(0, "10. Cat Caca Whole Coffee Beans");
     menu.get(10).add(1, "$45.75");
-    menu.get(10).add(2, Integer.toString((int) (Math.random() * 50)));
+    menu.get(10).add(2, Integer.toString(1 + (int) (Math.random() * 50)));
   } //end createMenu
 
   public void printMenu() {
