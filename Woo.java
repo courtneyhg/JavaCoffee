@@ -29,17 +29,34 @@ public class Woo {
     System.out.println("\n\nWelcome to Café Cat Caca! What are you here for?\n\t1. A customer.\n\t2. The new employee.");
     System.out.print("I am: ");
 
-    try {
+    while (true){ //so game doesn't exit if user chooses something other than 1/2
       String role = g.nextLine();
-      if ( role.equals("1") ) {
+      if (role.equals("1")){
+        System.out.println("\nYou chose to be the new Customer.");
         bob.cplay();
+        System.exit(0);
       }
-      else if ( role.equals("2") ){
+      if (role.equals("2")){
+        System.out.println("\nYou chose to be the new Employee.");
         joe.eplay();
+        System.exit(0);
       }
+      System.out.print("Choose a valid option:");
     }
-    catch (Exception e) {
-      System.out.println("Something went wrong. Exiting game.");
-    }
+
+
+
+    // try {
+    //   String role = g.nextLine();
+    //   if ( role.equals("1") ) {
+    //     bob.cplay();
+    //   }
+    //   else if ( role.equals("2") ){
+    //     joe.eplay();
+    //   }
+    // }
+    // catch (Exception e) {
+    //   System.out.println("Something went wrong. Exiting game.");
+    // }
   }//end main
 }//end class

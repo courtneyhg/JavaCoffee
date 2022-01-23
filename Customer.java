@@ -11,6 +11,8 @@ public class Customer {
   ArrayList <ArrayList<String>> receipt = new ArrayList<ArrayList<String>>();
   double total;
 
+ TiltMaze game = new TiltMaze();
+
   String[][] menu = {
     {"Item", "Price"},
     {"1. Cold Brew", "$6.00"},
@@ -39,18 +41,30 @@ public class Customer {
       receipt.get(drinkCount).add(menu[p][1]);
       System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Would you like anything else?");
       System.out.println("\t1. Yes\n\t2. No");
+
+      while (true) {
       String orderMore = c.nextLine();
       if (orderMore.equals("1")) {
         order();
+        break;
       }
       else if (orderMore.equals("2")) {
         receipt();
+        break;
       }
-    }
+      System.out.print("Choose a valid option:");
+    } //end while
+  } //end k.contains(drink)
+
+
+
   }//end order
 
   public void receipt() {
     System.out.println("\nSweet! Here is your receipt.");
+    // receipt.add(new ArrayList<String>());
+    // receipt.get(receipt.size() - 1).add("Total");
+    // receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
     for (int r = 0; r < receipt.size(); r++) {
       for (int s = 0; s < (receipt.get(r).size()); s++) {
         if (s == 0) {
@@ -68,76 +82,10 @@ public class Customer {
       }
       System.out.println();
     }
-    receipt.add(new ArrayList<String>());
-    receipt.get(receipt.size()).add(0, "Total");
-    receipt.get(receipt.size()).add(1, Double.toString(total));
+    System.out.println("Your total is $" + total + ".");
+    // receipt.get(receipt.size() - 1).add(0, "Total");
+    // System.out.println(receipt);
   }//end receipt
-
-
-  public void dineAndDash(){
-    String s;
-    int choice;
-    int lives = 3;
-
-    s = "Which way are you running?\n";
-    s += "\t1: left\n";
-    s += "\t2: right\n";
-
-    System.out.print(s);
-
-    try {
-      choice = Integer.parseInt(c.nextLine());
-      if (choice == 1){
-        lives = 2;
-        System.out.println("oof. wrong way, the employee is catching up!");
-        System.out.println("you lost a life, you have " + lives + " left");
-      }
-      if (choice == 2){
-        System.out.println("good turn, you're almost out of the cafe!");
-      }
-    }
-    catch (Exception e) {}
-
-      s = "Which way are you hopping?\n";
-      s += "\t1: over the chair\n";
-      s += "\t2: off the wall\n";
-
-      System.out.print(s);
-
-      try {
-        choice = Integer.parseInt(c.nextLine());
-        if (choice == 1){
-          System.out.println("wow, i guess you're good at stealing!");
-        }
-        if (choice == 2){
-          lives = lives - 1;
-          System.out.println("oops you fell down and the employees are on your tail");
-          System.out.println("you lost a life, you have " + lives + " left");
-        }
-      }
-      catch (Exception e) {}
-
-        s = "You're almost out of the store, this is the crucial decision....";
-        s = "How are you exiting?\n";
-        s += "\t1: out the window\n";
-        s += "\t2: stealing a kid's scooter and dipping\n";
-
-        System.out.print(s);
-
-        try {
-          choice = Integer.parseInt(c.nextLine());
-          if (choice == 1){
-            lives = lives - 1;
-            System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
-            System.out.println("you have " + lives + " lives left");
-            System.out.println("you're spending the night in jail have fun... ");
-          }
-          if (choice == 2){
-            System.out.println("You successfully dined and dashed! You even scored an extra scooter!");
-          }
-        }
-        catch (Exception e) {}
-  }
 
   public void cplay() {
     System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
@@ -158,27 +106,167 @@ public class Customer {
     receipt.get(0).add(0, "Item");
     receipt.get(0).add(1, "Price");
 
+
     try {
       order();
-      if (budget<total){
-        System.out.println("\nYou don't have enough. Go dine and dash!");
-        dineAndDash();
-      }
-      else{
-        break;
-      }
     }//end try
 
     catch (Exception e) {
-      System.out.println("\nYou're our 100th customer and are eligible for a prize if you win our game");
       //System.out.println("Something went wrong. Exiting game.");
     }//end catch
 
+    if (budget<total){
+      System.out.println("\nYou don't have enough money. Go dine and dash!");
 
-    // else{
-    //   System.out.println("\nYou're our 100th customer and are eligible for a prize if you win our game");
-    //   System.exit(0);
-    // }
+      String s;
+      int choice;
+      int lives = 3;
+
+
+      while(lives != 0){
+        s = "\nWhich way are you running?\n";
+        s += "\t1: Left\n";
+        s += "\t2: Right\n";
+
+        System.out.print(s);
+
+        try {
+          choice = Integer.parseInt(c.nextLine());
+          if (choice == 1){
+            lives = 2;
+            System.out.println("oof. wrong way, the employee is catching up!");
+            System.out.println("you lost a life, you have " + lives + " lives left");
+          }
+          if (choice == 2){
+            System.out.println("good turn, you're almost out of the cafe!");
+          }
+        }
+        catch (Exception e) {}
+
+          s = "\nWhich way are you hopping?\n";
+          s += "\t1: Over the chair\n";
+          s += "\t2: Off the wall\n";
+
+          System.out.print(s);
+
+          try {
+            choice = Integer.parseInt(c.nextLine());
+            if (choice == 1){
+              System.out.println("Wow, I guess you're good at stealing!");
+            }
+            if (choice == 2){
+              lives -= 1;
+              System.out.println("Oops, you fell down and the employees are on your tail.");
+              System.out.println("You lost a life, you have " + lives + " lives left.");
+            }
+          }
+          catch (Exception e) {}
+
+
+            s = "\nHow will you distract the chasing employee?\n";
+            s += "\t1: Throwing flowers with thorns\n";
+            s += "\t2: Play dead\n";
+
+            System.out.print(s);
+
+            try {
+              choice = Integer.parseInt(c.nextLine());
+              if (choice == 1){
+                System.out.println("Good move! You have momentarily stopped the employee!");
+              }
+              if (choice == 2){
+                lives -= 1;
+                if (lives == 0){
+                  System.out.println("Seriously? No one's going to believe you're dead");
+                  System.out.println("You lost a life, you have " + lives + " lives left.");
+                  System.out.println("You're spending the night in jail. Have fun...\nGAME OVER.");
+                  break;
+                }
+                else {
+                  System.out.println("Seriously? No one's going to believe you're dead");
+                  System.out.println("You lost a life, you have " + lives + " lives left.");
+                }
+              }
+            }
+            catch (Exception e) {}
+
+              s = "\nQuick, hide from the employee!\n";
+              s += "\t1: Hide in a baby's stroller\n";
+              s += "\t2: Pretend to be an employee\n";
+
+              System.out.print(s);
+
+              try {
+                choice = Integer.parseInt(c.nextLine());
+                if (choice == 1){
+                  System.out.println("No one can find WALDO!");
+                }
+                if (choice == 2){
+                  lives -= 1;
+                  if (lives == 0){
+                    System.out.println("You failed to get an employee uniform and was quickly found...");
+                    System.out.println("You lost a life, you have " + lives + " lives left.");
+                    System.out.println("You're spending the night in jail. Have fun...\nGAME OVER.");
+                    break;
+                  }
+                  else {
+                    System.out.println("You failed to get an employee uniform and was quickly found...");
+                    System.out.println("You lost a life, you have " + lives + " lives left.");
+                  }
+                }
+              }
+              catch (Exception e) {}
+
+            s = "\nYou're almost out of the store, this is the crucial decision....";
+            s = "\nHow are you exiting?\n";
+            s += "\t1: Out the window\n";
+            s += "\t2: Stealing a kid's scooter and dipping\n";
+
+            System.out.print(s);
+
+            try {
+              choice = Integer.parseInt(c.nextLine());
+              if (choice == 1){
+                lives -= 1;
+                System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
+                System.out.println("You have " + lives + " life left, but we reached the end so that doesn't matter");
+                System.out.println("You got caught anyway whoops");
+                System.out.println("You're spending the night in jail. Have fun...\nGAME OVER.");
+                System.exit(0);
+              }
+              if (choice == 2){
+                System.out.println("You successfully dined and dashed! You even scored an extra scooter!");
+                break;
+              }
+            }
+            catch (Exception e) {}
+            break;
+
+            }
+
+
+
+    }
+    else{
+      budget -= total;
+      budget = Math.round((budget) * 100) / 100.0;
+      System.out.println("\nYou paid and now have $" + budget + " remaining. Congrats! You're our 100th customer and you are eligible for a prize if you win our game.");
+      System.out.println("\nThis game is called the Tilt Maze Puzzle. Your goal is to move the '*' character to the 'o' character at the end of the maze.\nGood Luck!");
+      // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
+      // maze.add(new ArrayList<String>(Arrays.asList("_________")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|*_ |   |")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|      _|")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|  | _  |")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|   _  _|")));
+      // maze.add(new ArrayList<String>(Arrays.asList("|    | o|")));
+      // maze.add(new ArrayList<String>(Arrays.asList("‾‾‾‾‾‾‾‾‾")));
+      // for (int row = 0; row < maze.size(); row++) {
+      //     System.out.println(maze.get(row));
+      // }
+      game.mazePlay();
+
+    }
+
 
 
 
