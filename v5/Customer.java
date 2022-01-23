@@ -59,9 +59,9 @@ public class Customer {
 
   public void receipt() {
     System.out.println("\nSweet! Here is your receipt.");
-    // receipt.add(new ArrayList<String>());
-    // receipt.get(receipt.size() - 1).add("Total");
-    // receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
+    receipt.add(new ArrayList<String>());
+    receipt.get(receipt.size() - 1).add("Total");
+    receipt.get(receipt.size() - 1).add("$" + Double.toString(total));
     for (int r = 0; r < receipt.size(); r++) {
       for (int s = 0; s < (receipt.get(r).size()); s++) {
         if (s == 0) {
@@ -80,8 +80,8 @@ public class Customer {
       System.out.println();
     }
     System.out.println("Your total is $" + total + ".");
-    // receipt.get(receipt.size() - 1).add(0, "Total");
-    // System.out.println(receipt);
+    receipt.get(receipt.size() - 1).add(0, "Total");
+    System.out.println(receipt);
   }//end receipt
 
   public void cplay() {
@@ -109,7 +109,7 @@ public class Customer {
     }//end try
 
     catch (Exception e) {
-      //System.out.println("Something went wrong. Exiting game.");
+      System.exit(0);
     }//end catch
 
     if (budget<total){

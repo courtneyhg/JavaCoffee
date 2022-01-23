@@ -9,6 +9,7 @@ public class TiltMaze {
   int xCord, yCord; // the x and y coordinates of the * symbol
   int wallCord, floorCord, ceilingCord; // the coordinates of the barriers that * will face
   // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
+  String rowReplace;
 
   public void createMaze() {
     // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
@@ -45,6 +46,7 @@ public class TiltMaze {
     }
 
     public void makeChoice() {
+
       for (int roww = 1; roww < (mazeArray.size() - 1); roww++) {
         if (mazeArray.get(roww).contains("*")) {
           yCord = roww;
@@ -61,52 +63,34 @@ public class TiltMaze {
         }
       }
 
-      // if (t.nextLine().equals("w")) {
-      //   String rowReplace = replaceChar(mazeArray.get(yCord), ' ', xCord);
-      //   mazeArray.set(yCord, rowReplace);
-      //   rowReplace = replaceChar(mazeArray.get(yCord), '*', wallCord);
-      //   mazeArray.set(yCord, rowReplace);
-      //   printMaze();
-      // }
-      // else if (t.nextLine().equals("a")) {
-      //   String rowReplace = replaceChar(mazeArray.get(yCord), ' ', xCord);
-      //   mazeArray.set(yCord, rowReplace);
-      //   rowReplace = replaceChar(mazeArray.get(yCord), '*', wallCord);
-      //   mazeArray.set(yCord, rowReplace);
-      //   printMaze();
-      // }
-      // if (t.nextLine().equals("s")) {
-      //   while (yCord < (mazeArray.size() - 1)) {
-      //     String rowReplace = replaceChar(mazeArray.get(yCord), ' ', xCord);
-      //     mazeArray.set(yCord, rowReplace);
-      //     if (mazeArray.get(yCord).substring(1,9).contains("‾")) {
-      //       rowReplace = replaceChar(mazeArray.get(yCord), '*', floorCord+1);
-      //       mazeArray.set(yCord, rowReplace);
-      //     }
-      //     yCord++;
-      //   }
-      //   // while (mazeArray.get(yCord).substring(xCord,xCord +1) ) {
-      //   //   String colMove =
-      //   // rowReplace = replaceChar(mazeArray.get(yCord), '*', floorCord);
-      //   // mazeArray.set(yCord, rowReplace);
-      //   printMaze();
-      //   // System.out.print(rowReplace);
-      // }
-      if (t.nextLine().equals("d")) {
-        String rowReplace = replaceChar(mazeArray.get(yCord), ' ', xCord);
-        mazeArray.set(yCord, rowReplace);
-        rowReplace = replaceChar(mazeArray.get(yCord), '*', wallCord);
-        mazeArray.set(yCord, rowReplace);
-        printMaze();
-        // System.out.print("Enter your key of choice: ");
+      System.out.print("Enter your key of choice: ");
+      try {
+        //   if (t.nextLine().equals("d")) {
+        //   rowReplace = replaceChar(mazeArray.get(yCord), ' ', xCord);
+        //   mazeArray.set(yCord, rowReplace);
+        //   rowReplace = replaceChar(mazeArray.get(yCord), '*', wallCord);
+        //   mazeArray.set(yCord, rowReplace);
+        //   printMaze();
+        //   makeChoice();
+        // } //end d
+        if (t.nextLine().equals("a")) {
+          rowReplace = replaceChar(mazeArray.get(yCord), ' ', xCord);
+          mazeArray.set(yCord, rowReplace);
+          
+          printMaze();
+          makeChoice();
+        } //end a
       }
-    }
+      catch (Exception e) {
+        System.out.println("Something went wrong. Exiting game.");
+      }
+    } //end makeChoice
+
 
   public void mazePlay() {
     createMaze();
     printMaze();
     System.out.println("\nDirections:\n\t- To move the '*' up, enter the w key into terminal.\n\t- To move left, enter a.\n\t- To move down, enter s.\n\t- To move right, enter d.\n\t- You stop moving when you come into a corner or a dead end.");
-    System.out.print("Enter your key of choice: ");
     makeChoice();
   }
 
