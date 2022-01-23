@@ -224,12 +224,15 @@ public class Customer {
                 System.out.println("You got caught anyway whoops");
                 System.out.println("You're spending the night in jail. Have fun...\nGAME OVER.");
                 System.exit(0);
+                break;
               }
               if (choice == 2){
                 System.out.println("You successfully dined and dashed! You even scored an extra scooter!");
+                break;
               }
             }
             catch (Exception e) {}
+            break;
 
             }
 
