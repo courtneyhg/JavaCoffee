@@ -41,19 +41,23 @@ public class Customer {
       receipt.get(drinkCount).add(menu[p][1]);
       System.out.println("You have excellent taste! The " + menu[p][0].toLowerCase().substring(3) + " is delicious. Would you like anything else?");
       System.out.println("\t1. Yes\n\t2. No");
+
       while (true) {
-        String orderMore = c.nextLine();
-        if (orderMore.equals("1")) {
-          order();
-          break;
-        }
-        else if (orderMore.equals("2")) {
-          receipt();
-          break;
-        }
-        System.out.print("Choose a valid option:");
-      } //end while
-    } //end k.contains(drink)
+      String orderMore = c.nextLine();
+      if (orderMore.equals("1")) {
+        order();
+        break;
+      }
+      else if (orderMore.equals("2")) {
+        receipt();
+        break;
+      }
+      System.out.print("Choose a valid option:");
+    } //end while
+  } //end k.contains(drink)
+
+
+
   }//end order
 
   public void receipt() {
@@ -84,7 +88,7 @@ public class Customer {
   }//end receipt
 
   public void cplay() {
-    System.out.println("\nYour budget is $" + budget + ".\nTake a look at our menu below!\n");
+    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
 
     for (int i = 0; i < (menu.length); i++) {
       for (int j = 0; j < (menu[i].length); j++) {
@@ -106,7 +110,9 @@ public class Customer {
     try {
       order();
     }//end try
+
     catch (Exception e) {
+      //System.out.println("Something went wrong. Exiting game.");
     }//end catch
 
     if (budget<total){
@@ -115,6 +121,7 @@ public class Customer {
       String s;
       int choice;
       int lives = 3;
+
 
       while(lives != 0){
         s = "\nWhich way are you running?\n";
@@ -125,10 +132,6 @@ public class Customer {
 
         try {
           choice = Integer.parseInt(c.nextLine());
-          while (choice < 1 || choice > 2) {
-                System.out.println("Please enter a valid option");
-                choice = c.nextInt();
-            }
           if (choice == 1){
             lives = 2;
             System.out.println("oof. wrong way, the employee is catching up!");
@@ -148,10 +151,6 @@ public class Customer {
 
           try {
             choice = Integer.parseInt(c.nextLine());
-            while (choice < 1 || choice > 2) {
-                  System.out.println("Please enter a valid option");
-                  choice = c.nextInt();
-              }
             if (choice == 1){
               System.out.println("Wow, I guess you're good at stealing!");
             }
@@ -172,10 +171,6 @@ public class Customer {
 
             try {
               choice = Integer.parseInt(c.nextLine());
-              while (choice < 1 || choice > 2) {
-                    System.out.println("Please enter a valid option");
-                    choice = c.nextInt();
-                }
               if (choice == 1){
                 System.out.println("Good move! You have momentarily stopped the employee!");
               }
@@ -203,10 +198,6 @@ public class Customer {
 
               try {
                 choice = Integer.parseInt(c.nextLine());
-                while (choice < 1 || choice > 2) {
-                      System.out.println("Please enter a valid option");
-                      choice = c.nextInt();
-                  }
                 if (choice == 1){
                   System.out.println("No one can find WALDO!");
                 }
@@ -235,10 +226,6 @@ public class Customer {
 
             try {
               choice = Integer.parseInt(c.nextLine());
-              while (choice < 1 || choice > 2) {
-                    System.out.println("Please enter a valid option");
-                    choice = c.nextInt();
-                }
               if (choice == 1){
                 lives -= 1;
                 System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
@@ -246,7 +233,6 @@ public class Customer {
                 System.out.println("You got caught anyway whoops");
                 System.out.println("You're spending the night in jail. Have fun...\nGAME OVER.");
                 System.exit(0);
-                break;
               }
               if (choice == 2){
                 System.out.println("You successfully dined and dashed! You even scored an extra scooter!");
@@ -263,7 +249,7 @@ public class Customer {
     }
     else{
       budget -= total;
-      budget =  Math.round(budget * 100) / 100.0;
+      budget = Math.round((budget) * 100) / 100.0;
       System.out.println("\nYou paid and now have $" + budget + " remaining. Congrats! You're our 100th customer and you are eligible for a prize if you win our game.");
       System.out.println("\nThis game is called the Tilt Maze Puzzle. Your goal is to move the '*' character to the 'o' character at the end of the maze.\nGood Luck!");
       // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
