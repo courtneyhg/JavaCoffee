@@ -263,7 +263,7 @@ public class Customer {
       // for (int row = 0; row < maze.size(); row++) {
       //     System.out.println(maze.get(row));
       // }
-      // game.mazePlay();
+      game.mazePlay();
 
     }
 
