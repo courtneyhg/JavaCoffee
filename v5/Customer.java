@@ -11,7 +11,7 @@ public class Customer {
   ArrayList <ArrayList<String>> receipt = new ArrayList<ArrayList<String>>();
   double total;
 
- TiltMaze game1 = new TiltMaze();
+ TiltMaze game = new TiltMaze();
 
   String[][] menu = {
     {"Item", "Price"},
@@ -263,7 +263,8 @@ public class Customer {
       // for (int row = 0; row < maze.size(); row++) {
       //     System.out.println(maze.get(row));
       // }
-      game1.mazePlay();
+      game.mazePlay();
+
     }
 
 

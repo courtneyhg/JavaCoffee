@@ -7,7 +7,6 @@ public class TiltMaze {
   Scanner t = new Scanner(System.in);
   ArrayList<String> mazeArray = new ArrayList<>();
   int xCord, yCord; // the x and y coordinates of the * symbol
-  int wallCord, floorCord, ceilingCord; // the coordinates of the barriers that * will face
   // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
   String rowReplace;
 
@@ -75,9 +74,6 @@ public class TiltMaze {
       mazeArray.set(yCord, rowReplace);
       rowReplace = replaceChar(mazeArray.get(yCord), '*', xCord-1);
       xCord--;
-      System.out.println(rowReplace);
-      System.out.println(yCord);
-      System.out.println(xCord);
       if (mazeArray.get(yCord).substring(xCord, xCord+1).contains("_")) {
         mazeArray.set(yCord, rowReplace);
         rowReplace = replaceChar(mazeArray.get(yCord+1), '‾', xCord);
@@ -126,9 +122,6 @@ public class TiltMaze {
       mazeArray.set(yCord, rowReplace);
       rowReplace = replaceChar(mazeArray.get(yCord), '*', xCord+1);
       xCord++;
-      System.out.println(rowReplace);
-      System.out.println(yCord);
-      System.out.println(xCord);
       if (mazeArray.get(yCord).substring(xCord, xCord+1).contains("‾")) {
         rowReplace = replaceChar(mazeArray.get(yCord-1), '_', xCord);
         mazeArray.set(yCord-1, rowReplace);
@@ -159,17 +152,11 @@ public class TiltMaze {
         yCord = roww;
         xCord = mazeArray.get(roww).indexOf("*");
       }
-      else if (mazeArray.get(roww).substring(1,9).contains("|")) {
-        wallCord = mazeArray.get(yCord).substring(1,9).indexOf("|");
-      }
-      else if (mazeArray.get(roww).substring(1,9).contains("_")) {
-        floorCord = mazeArray.get(yCord).substring(1,9).indexOf("_");
-      }
-      else if (mazeArray.get(roww).substring(1,9).contains("‾")) {
-        ceilingCord = mazeArray.get(yCord).substring(1,9).indexOf("‾");
-      }
     }
-
+    if (yCord == 5 && xCord == 8) {
+      System.out.println("Congrats! You completed the game. You won a $100 gift card.\nThank you for playing!");
+      System.exit(0);
+    }
     System.out.print("Enter your key of choice: ");
     while(true) {
       String wasd = t.nextLine();
@@ -185,6 +172,9 @@ public class TiltMaze {
       else if (wasd.equals("d")) {
         moveRight();
       } //end d
+      else if (wasd.equals("Give up.")) {
+        System.exit(0);
+      }
       System.out.print("Choose a valid option: ");
     }
   } //end makeChoice
