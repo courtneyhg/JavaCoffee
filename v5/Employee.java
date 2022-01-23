@@ -85,7 +85,7 @@ public class Employee {
      }
    } //end printStock
 
-   public void takeOrder(){
+   public void takeOrder() {
      double rr = (Math.random() * 10) + 1.0;
      int orderNumber = (int) rr;
      System.out.println("\nYour customer wants to order a number 0" + orderNumber);
@@ -100,8 +100,8 @@ public class Employee {
        takeOrder2(); //last chance to do order correctly
        //catchtheRobr();
      }  else { //if right
-       System.out.println("\n. . .Making the coffee . . .");
-       System.out.println("\n. . .You place the coffee on the counter . . .");
+       System.out.println("\nMaking the coffee...");
+       System.out.println("\nYou place the coffee on the counter..");
 
        //error for thread.sleep() but not important piece of code
        // int l = 0;
@@ -136,10 +136,10 @@ public class Employee {
      System.out.println("\nWhat drink is number 0" + orderNumber + "?");
      String userAnswer = e.nextLine();
      if (!(userAnswer.equals(answer))){
-       System.out.println("Wrong again. You disappoint me. You're fired. Get out of here . . .");
+       System.out.println("Wrong again. You disappoint me. You're fired. Get out of here...");
        System.exit(0);
      } else {
-       System.out.println("Everyone makes a mistake in this business. Good thing you've gotten better . . .");
+       System.out.println("Everyone makes a mistake in this business. Good thing you've gotten better...");
        System.out.println("\n. . . Making a " + userAnswer + " . . .");
        catchtheRobr();
    }
