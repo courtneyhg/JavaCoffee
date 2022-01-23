@@ -85,7 +85,7 @@ public class Employee {
      }
    } //end printStock
 
-   public void takeOrder() {
+   public void takeOrder() throws InterruptedException{
      double rr = (Math.random() * 10) + 1.0;
      int orderNumber = (int) rr;
      System.out.println("\nYour customer wants to order a number 0" + orderNumber);
@@ -100,21 +100,23 @@ public class Employee {
        takeOrder2(); //last chance to do order correctly
        //catchtheRobr();
      }  else { //if right
-       System.out.println("\nMaking the coffee...");
-       System.out.println("\nYou place the coffee on the counter..");
+       System.out.println("\n. . .Making the coffee . . .");
+        int l = 0;
+        while (l < 25) {
+          System.out.print(" - ");
+          Thread.sleep(100);
+          l++;
+        }
+       System.out.println("\n. . .You place the coffee on the counter . . .");
 
        //error for thread.sleep() but not important piece of code
-       // int l = 0;
-       // while (l < 25) {
-       //   System.out.print(" - ");
-       //   Thread.sleep(100);
-       //   l++;
-       // }
-       // while (l < 50) {
-       //   System.out.print(" - ");
-       //   Thread.sleep(100);
-       //   l++;
-       // }
+        int po = 0;
+        while (po < 25) {
+          System.out.print(" - ");
+          Thread.sleep(100);
+          po++;
+        }
+
 
        catchtheRobr();
 
@@ -127,7 +129,8 @@ public class Employee {
    } //end takeOrder
 
 
-   public void takeOrder2(){ //only happens if first order is wrong
+   public void takeOrder2() throws InterruptedException
+   { //only happens if first order is wrong
      double rr = (Math.random() * 10) + 1.0;
      int orderNumber = (int) rr;
      System.out.println("\nAnother customer wants to order a number 0" + orderNumber);
@@ -136,16 +139,16 @@ public class Employee {
      System.out.println("\nWhat drink is number 0" + orderNumber + "?");
      String userAnswer = e.nextLine();
      if (!(userAnswer.equals(answer))){
-       System.out.println("Wrong again. You disappoint me. You're fired. Get out of here...");
+       System.out.println("Wrong again. You disappoint me. You're fired. Get out of here . . .");
        System.exit(0);
      } else {
-       System.out.println("Everyone makes a mistake in this business. Good thing you've gotten better...");
+       System.out.println("Everyone makes a mistake in this business. Good thing you've gotten better . . .");
        System.out.println("\n. . . Making a " + userAnswer + " . . .");
        catchtheRobr();
    }
  } //end takeOrder2
 
-  public void catchtheRobr(){
+  public void catchtheRobr() throws InterruptedException{
     boolean a = true;
     System.out.println("\n Uh-oh! The customer decided to steal the coffee without paying!!! What do you do?!?! \n\t1. Not my problem. Let dem go.\n\t2. Try to catch dem.");
     while (a){
@@ -158,15 +161,17 @@ public class Employee {
       System.out.println("\n You literally just stood there while they were getting away . . . You're fired . . .");
       System.exit(0);
     }
+    System.out.println("\n Choice a valid option, noob.");
   }
 } //end catchtheRobr
 
-  public void catchtheRobrgame(){
+  public void catchtheRobrgame() throws InterruptedException{
     System.out.println("\n You look at the register and see a paper saying 'Door Lock Code' with a string a numbers following it. \n\n Type in the following numbers you see to lock the door! Hurry, you have 5 seconds!!!");
     int uwu = (int) (Math.random() * 10);
     int owo = (int) (Math.random() * 10);
     int owu = (int) (Math.random() * 10);
     int uwo = (int) (Math.random() * 10);
+    Thread.sleep(8000);
     String noombas = String.valueOf(uwu) + " " + String.valueOf(owo) + " " + String.valueOf(owu) + " " + String.valueOf(uwo);
     System.out.println(noombas);
     Long startTime = System.currentTimeMillis();
@@ -218,7 +223,7 @@ public class Employee {
 
 
 
-  public void eplay() { //main method to use
+  public void eplay() throws InterruptedException{ //main method to use
     System.out.println("\nNice to have ya here. Let's get started.");
     System.out.print("First, what should I call you? ");
     String eName = e.nextLine();
@@ -231,6 +236,13 @@ public class Employee {
     printMenu();
     justStock();
     printStock();
+    Thread.sleep(8000);
+     int l = 0;
+        while (l < 25) {
+          System.out.print(" - ");
+          Thread.sleep(100);
+          l++;
+        }
 
     System.out.println("By typing in the numbers next to the items, put them in increasing order by stock.");
     System.out.println("Enter the number in stock in ascending order. Make sure to separate each number with a space. You have 40 seconds.");
@@ -245,10 +257,10 @@ public class Employee {
 
 
     if (eSort.equals(StringifybubbleSort(stockOrder)) == true && ((endTime - startTime)/1000.0) <= 40 ){
-      System.out.print("Pog. You completed your first job.");
+      System.out.print("\nPog. You completed your first job.");
       System.out.println("\nThis is the new stock order.");
       System.out.println(StringifybubbleSort(stockOrder));
-      System.out.println("Let's take customer's order");
+      System.out.println("\nLet's take customer's order");
       // continue(); //make later(take custoemr order, stop them from dine and dash)
     } else {
         ogStock(stockOrderCopy);
