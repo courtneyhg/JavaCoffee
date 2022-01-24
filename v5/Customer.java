@@ -140,6 +140,9 @@ public class Customer {
           if (choice == 2){
             System.out.println("good turn, you're almost out of the cafe!");
           }
+          if (false){
+            System.out.println("Please enter valid choice:")
+          }
         }
         catch (Exception e) {}
 
@@ -251,7 +254,7 @@ public class Customer {
       budget -= total;
       budget = Math.round((budget) * 100) / 100.0;
       System.out.println("\nYou paid and now have $" + budget + " remaining. Congrats! You're our 100th customer and you are eligible for a prize if you win our game.");
-      System.out.println("\nThis game is called the Tilt Maze Puzzle. Your goal is to move the '*' character to the 'o' character at the end of the maze.\nGood Luck!");
+      System.out.println("\nThis game is called the Tilt Maze Puzzle (credit to Andrea Gilbert for creating it). \nYour goal is to move the '*' character to the 'o' character at the end of the maze.\nGood Luck!");
       // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
       // maze.add(new ArrayList<String>(Arrays.asList("_________")));
       // maze.add(new ArrayList<String>(Arrays.asList("|*_ |   |")));
