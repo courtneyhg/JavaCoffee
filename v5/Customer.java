@@ -106,7 +106,7 @@ public class Customer {
         try {
           choice = Integer.parseInt(c.nextLine());
           while (choice != 1 || choice != 2){
-            System.out.println("Please enter a valid choice: \nRestarting mini game...")
+            System.out.println("Please enter a valid choice: \nRestarting mini game...");
             miniGame();
           }
           if (choice == 1){
@@ -131,7 +131,7 @@ public class Customer {
 
           try {
             while (choice != 1 || choice != 2){
-              System.out.println("Please enter a valid choice: \nRestarting mini game...")
+              System.out.println("Please enter a valid choice: \nRestarting mini game...");
               miniGame();
             }
             choice = Integer.parseInt(c.nextLine());
@@ -156,7 +156,7 @@ public class Customer {
             try {
               choice = Integer.parseInt(c.nextLine());
               while (choice != 1 || choice != 2){
-                System.out.println("Please enter a valid choice: \nRestarting mini game...")
+                System.out.println("Please enter a valid choice: \nRestarting mini game...");
                 miniGame();
               }
               if (choice == 1){
@@ -187,7 +187,7 @@ public class Customer {
               try {
                 choice = Integer.parseInt(c.nextLine());
                 while (choice != 1 || choice != 2){
-                  System.out.println("Please enter a valid choice: \nRestarting mini game...")
+                  System.out.println("Please enter a valid choice: \nRestarting mini game...");
                   miniGame();
                 }
                 if (choice == 1){
@@ -220,7 +220,7 @@ public class Customer {
               choice = Integer.parseInt(c.nextLine());
               if (choice == 1){
                 while (choice != 1 || choice != 2){
-                  System.out.println("Please enter a valid choice: \nRestarting mini game...")
+                  System.out.println("Please enter a valid choice: \nRestarting mini game...");
                   miniGame();
                 }
                 lives -= 1;
