@@ -24,6 +24,7 @@ UNRESOLVED ISSUES
 blah blah pesky bug...
 maybe some of these will move into the Obs.Ovrcm section...
 * typing letters for the dine and dash game
+* after an invalid choice, it restarts the loop but when lives are equal to zero it restarts loop again instead of exiting out of game
 * one specific situation in which our tilt maze does not work
 
 COOL STUFF LEARNED
