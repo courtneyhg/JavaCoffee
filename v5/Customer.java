@@ -105,6 +105,10 @@ public class Customer {
 
         try {
           choice = Integer.parseInt(c.nextLine());
+          while (choice != 1 || choice != 2){
+            System.out.println("Please enter a valid choice: \nRestarting mini game...");
+            choice = scan.nextInt ();
+          }
           if (choice == 1){
             lives = 2;
             System.out.println("oof. wrong way, the employee is catching up!");
@@ -112,10 +116,6 @@ public class Customer {
           }
           if (choice == 2){
             System.out.println("good turn, you're almost out of the cafe!");
-          }
-          if (choice != 1 || choice != 2){
-            System.out.println("Please enter a valid choice: \nRestarting mini game...");
-            miniGame();
           }
         }
         catch (Exception e) {}
