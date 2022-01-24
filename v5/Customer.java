@@ -105,9 +105,9 @@ public class Customer {
 
         try {
           choice = Integer.parseInt(c.nextLine());
-          while (choice != 1 || choice != 2){
+          while (choice != 1 && choice != 2){
             System.out.println("Please enter a valid choice: \nRestarting mini game...");
-            choice = scan.nextInt ();
+            choice = c.nextInt ();
           }
           if (choice == 1){
             lives = 2;
@@ -128,9 +128,10 @@ public class Customer {
 
           try {
             choice = Integer.parseInt(c.nextLine());
-            while (choice != 1 || choice != 2){
+            while (choice != 1 && choice != 2){
               System.out.println("Please enter a valid choice: \nRestarting mini game...");
               miniGame();
+              choice = c.nextInt ();
             }
             if (choice == 1){
               System.out.println("Wow, I guess you're good at stealing!");
@@ -152,9 +153,10 @@ public class Customer {
 
             try {
               choice = Integer.parseInt(c.nextLine());
-              while (choice != 1 || choice != 2){
+              while (choice != 1 && choice != 2){
                 System.out.println("Please enter a valid choice: \nRestarting mini game...");
                 miniGame();
+                choice = c.nextInt ();
               }
               if (choice == 1){
                 System.out.println("Good move! You have momentarily stopped the employee!");
@@ -183,9 +185,10 @@ public class Customer {
 
               try {
                 choice = Integer.parseInt(c.nextLine());
-                while (choice != 1 || choice != 2){
+                while (choice != 1 && choice != 2){
                   System.out.println("Please enter a valid choice: \nRestarting mini game...");
                   miniGame();
+                  choice = c.nextInt ();
                 }
                 if (choice == 1){
                   System.out.println("No one can find WALDO!");
@@ -215,11 +218,12 @@ public class Customer {
 
             try {
               choice = Integer.parseInt(c.nextLine());
+              while (choice != 1 && choice != 2){
+                System.out.println("Please enter a valid choice: \nRestarting mini game...");
+                miniGame();
+                choice = c.nextInt ();
+              }
               if (choice == 1){
-                while (choice != 1 || choice != 2){
-                  System.out.println("Please enter a valid choice: \nRestarting mini game...");
-                  miniGame();
-                }
                 lives -= 1;
                 System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
                 System.out.println("You have " + lives + " life left, but we reached the end so that doesn't matter");
