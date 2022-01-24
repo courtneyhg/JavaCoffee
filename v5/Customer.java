@@ -130,11 +130,11 @@ public class Customer {
           System.out.print(s);
 
           try {
+            choice = Integer.parseInt(c.nextLine());
             while (choice != 1 || choice != 2){
               System.out.println("Please enter a valid choice: \nRestarting mini game...");
               miniGame();
             }
-            choice = Integer.parseInt(c.nextLine());
             if (choice == 1){
               System.out.println("Wow, I guess you're good at stealing!");
             }
