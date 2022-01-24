@@ -92,5 +92,5 @@ Jason :: added rest of jobs to employee. started to add invalid choices
 
 2022-01-23
 Yuki :: finished maze. updated Customer so that the game flows, fixed while loop in Customer so that invalid choice works
-Jason :: finished employee, redid uml and flowchart
+Jason :: finished employee, redid uml and flowchart, updated root
 Courtney :: added invalid choices in Customer (took me way too long to realize how to do it)
