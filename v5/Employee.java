@@ -96,7 +96,7 @@ public class Employee {
      String userAnswer = e.nextLine();
      if (!(userAnswer.equals(answer))){ //if wrong first time
        System.out.println("\n. . . Making a " + userAnswer + " . . .");
-       System.out.println("\n You messed up the customer's order. They throw the coffee at you, assault you with not so PG-13 words, and leave an angry review. Mess up one more time, and you're fired.");
+       System.out.println("\nYou messed up the customer's order. They throw the coffee at you, assault you with not so PG-13 words, and leave an angry review. Mess up one more time, and you're fired.");
        takeOrder2(); //last chance to do order correctly
        //catchtheRobr();
      }  else { //if right
@@ -150,7 +150,7 @@ public class Employee {
 
   public void catchtheRobr() throws InterruptedException{
     boolean a = true;
-    System.out.println("\n Uh-oh! The customer decided to steal the coffee without paying!!! What do you do?!?! \n\t1. Not my problem. Let dem go.\n\t2. Try to catch dem.");
+    System.out.println("\nUh-oh! The customer decided to steal the coffee without paying!!! What do you do?!?! \n\t1. Not my problem. Let dem go.\n\t2. Try to catch dem.");
     while (a){
     String choice = e.nextLine();
     if (choice.equals("2")){
@@ -166,7 +166,7 @@ public class Employee {
 } //end catchtheRobr
 
   public void catchtheRobrgame() throws InterruptedException{
-    System.out.println("\n You look at the register and see a paper saying 'Door Lock Code' with a string a numbers following it. \n\n Type in the following numbers you see to lock the door! Hurry, you have 5 seconds!!!");
+    System.out.println("\nYou look at the register and see a paper saying 'Door Lock Code' with a string a numbers following it. \n\n Type in the following numbers you see to lock the door! Hurry, you have 5 seconds!!!");
     int uwu = (int) (Math.random() * 10);
     int owo = (int) (Math.random() * 10);
     int owu = (int) (Math.random() * 10);
@@ -183,7 +183,7 @@ public class Employee {
         System.out.println("\n . . . You were too slow and they got away . . . You just got fired . . .");
         System.exit(0);
       } else {
-        System.out.println("\n You entered the pin correctly and fast enough that the door locked before the thief was able to escape. You call the police and they come and arrest thy noob. For doing such an excellent job, I am giving my position of Manager to you. (It's about time I retired)");
+        System.out.println("\nYou entered the pin correctly and fast enough that the door locked before the thief was able to escape. You call the police and they come and arrest thy noob. For doing such an excellent job, I am giving my position of Manager to you. (It's about time I retired)");
         System.exit(0);
       }
     } else {
