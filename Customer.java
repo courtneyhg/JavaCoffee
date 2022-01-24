@@ -108,6 +108,7 @@ public class Customer {
           while (choice != 1 && choice != 2){
             System.out.println("Please enter a valid choice: \nRestarting mini game...");
             miniGame();
+	    System.exit(0);
             choice = c.nextInt ();
           }
           if (choice == 1){
@@ -157,6 +158,7 @@ public class Customer {
               while (choice != 1 && choice != 2){
                 System.out.println("Please enter a valid choice: \nRestarting mini game...");
                 miniGame();
+		System.exit(0);
                 choice = c.nextInt ();
               }
               if (choice == 1){
@@ -189,6 +191,7 @@ public class Customer {
                 while (choice != 1 && choice != 2){
                   System.out.println("Please enter a valid choice: \nRestarting mini game...");
                   miniGame();
+		  System.exit(0);
                   choice = c.nextInt ();
                 }
                 if (choice == 1){
@@ -222,6 +225,7 @@ public class Customer {
               while (choice != 1 && choice != 2){
                 System.out.println("Please enter a valid choice: \nRestarting mini game...");
                 miniGame();
+		System.exit(0);
                 choice = c.nextInt ();
               }
               if (choice == 1){
