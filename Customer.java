@@ -87,34 +87,7 @@ public class Customer {
     // System.out.println(receipt);
   }//end receipt
 
-  public void cplay() {
-    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
-
-    for (int i = 0; i < (menu.length); i++) {
-      for (int j = 0; j < (menu[i].length); j++) {
-        if (j == 0) {
-          System.out.print("\t" + menu[i][j] + " | ");
-        }
-        else {
-          System.out.print(menu[i][j]);
-        }
-      }
-      System.out.println();
-    }
-
-    receipt.add(new ArrayList<String>());
-    receipt.get(0).add(0, "Item");
-    receipt.get(0).add(1, "Price");
-
-
-    try {
-      order();
-    }//end try
-
-    catch (Exception e) {
-      //System.out.println("Something went wrong. Exiting game.");
-    }//end catch
-
+  public void miniGame(){
     if (budget<total){
       System.out.println("\nYou don't have enough money. Go dine and dash!");
 
@@ -132,6 +105,11 @@ public class Customer {
 
         try {
           choice = Integer.parseInt(c.nextLine());
+          while (choice != 1 && choice != 2){
+            System.out.println("Please enter a valid choice: \nRestarting mini game...");
+            miniGame();
+            choice = c.nextInt ();
+          }
           if (choice == 1){
             lives = 2;
             System.out.println("oof. wrong way, the employee is catching up!");
@@ -151,6 +129,11 @@ public class Customer {
 
           try {
             choice = Integer.parseInt(c.nextLine());
+            while (choice != 1 && choice != 2){
+              System.out.println("Please enter a valid choice: \nRestarting mini game...");
+              miniGame();
+              choice = c.nextInt ();
+            }
             if (choice == 1){
               System.out.println("Wow, I guess you're good at stealing!");
             }
@@ -171,6 +154,11 @@ public class Customer {
 
             try {
               choice = Integer.parseInt(c.nextLine());
+              while (choice != 1 && choice != 2){
+                System.out.println("Please enter a valid choice: \nRestarting mini game...");
+                miniGame();
+                choice = c.nextInt ();
+              }
               if (choice == 1){
                 System.out.println("Good move! You have momentarily stopped the employee!");
               }
@@ -198,6 +186,11 @@ public class Customer {
 
               try {
                 choice = Integer.parseInt(c.nextLine());
+                while (choice != 1 && choice != 2){
+                  System.out.println("Please enter a valid choice: \nRestarting mini game...");
+                  miniGame();
+                  choice = c.nextInt ();
+                }
                 if (choice == 1){
                   System.out.println("No one can find WALDO!");
                 }
@@ -226,6 +219,11 @@ public class Customer {
 
             try {
               choice = Integer.parseInt(c.nextLine());
+              while (choice != 1 && choice != 2){
+                System.out.println("Please enter a valid choice: \nRestarting mini game...");
+                miniGame();
+                choice = c.nextInt ();
+              }
               if (choice == 1){
                 lives -= 1;
                 System.out.println("WRONG MOVE! THEY CAUGHT YOU!");
@@ -251,7 +249,7 @@ public class Customer {
       budget -= total;
       budget = Math.round((budget) * 100) / 100.0;
       System.out.println("\nYou paid and now have $" + budget + " remaining. Congrats! You're our 100th customer and you are eligible for a prize if you win our game.");
-      System.out.println("\nThis game is called the Tilt Maze Puzzle. Your goal is to move the '*' character to the 'o' character at the end of the maze.\nGood Luck!");
+      System.out.println("\nThis game is called the Tilt Maze Puzzle (credit to Andrea Gilbert for creating it). \nYour goal is to move the '*' character to the 'o' character at the end of the maze.\nGood Luck!");
       // ArrayList <ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
       // maze.add(new ArrayList<String>(Arrays.asList("_________")));
       // maze.add(new ArrayList<String>(Arrays.asList("|*_ |   |")));
@@ -266,6 +264,40 @@ public class Customer {
       game.mazePlay();
 
     }
+  }
+
+
+
+  public void cplay() {
+    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
+
+    for (int i = 0; i < (menu.length); i++) {
+      for (int j = 0; j < (menu[i].length); j++) {
+        if (j == 0) {
+          System.out.print("\t" + menu[i][j] + " | ");
+        }
+        else {
+          System.out.print(menu[i][j]);
+        }
+      }
+      System.out.println();
+    }
+
+    receipt.add(new ArrayList<String>());
+    receipt.get(0).add(0, "Item");
+    receipt.get(0).add(1, "Price");
+
+
+    try {
+      order();
+    }//end try
+
+    catch (Exception e) {
+      //System.out.println("Something went wrong. Exiting game.");
+    }//end catch
+
+    miniGame();
+
 
 
 
