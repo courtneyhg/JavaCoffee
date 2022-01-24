@@ -87,34 +87,7 @@ public class Customer {
     // System.out.println(receipt);
   }//end receipt
 
-  public void cplay() {
-    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
-
-    for (int i = 0; i < (menu.length); i++) {
-      for (int j = 0; j < (menu[i].length); j++) {
-        if (j == 0) {
-          System.out.print("\t" + menu[i][j] + " | ");
-        }
-        else {
-          System.out.print(menu[i][j]);
-        }
-      }
-      System.out.println();
-    }
-
-    receipt.add(new ArrayList<String>());
-    receipt.get(0).add(0, "Item");
-    receipt.get(0).add(1, "Price");
-
-
-    try {
-      order();
-    }//end try
-
-    catch (Exception e) {
-      //System.out.println("Something went wrong. Exiting game.");
-    }//end catch
-
+  public void miniGame(){
     if (budget<total){
       System.out.println("\nYou don't have enough money. Go dine and dash!");
 
@@ -132,6 +105,10 @@ public class Customer {
 
         try {
           choice = Integer.parseInt(c.nextLine());
+          while (choice != 1 || choice != 2){
+            System.out.println("Please enter a valid choice: \nRestarting mini game...")
+            miniGame();
+          }
           if (choice == 1){
             lives = 2;
             System.out.println("oof. wrong way, the employee is catching up!");
@@ -269,6 +246,40 @@ public class Customer {
       game.mazePlay();
 
     }
+  }
+
+
+
+  public void cplay() {
+    System.out.println("Your budget is $" + budget + ".\nTake a look at our menu below!\n");
+
+    for (int i = 0; i < (menu.length); i++) {
+      for (int j = 0; j < (menu[i].length); j++) {
+        if (j == 0) {
+          System.out.print("\t" + menu[i][j] + " | ");
+        }
+        else {
+          System.out.print(menu[i][j]);
+        }
+      }
+      System.out.println();
+    }
+
+    receipt.add(new ArrayList<String>());
+    receipt.get(0).add(0, "Item");
+    receipt.get(0).add(1, "Price");
+
+
+    try {
+      order();
+    }//end try
+
+    catch (Exception e) {
+      //System.out.println("Something went wrong. Exiting game.");
+    }//end catch
+
+    miniGame();
+
 
 
 
