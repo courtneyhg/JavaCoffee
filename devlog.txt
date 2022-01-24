@@ -15,12 +15,15 @@ wow we so BOSS bc...
 * we figured out why the dine and dash kept showing up even though the customer wasn't trying to dine and dash
 * able to make a 2d array with the menu item and Price
 * used parseInt to turn the strings from our menu into ints we can use
+* adding invalid choices using a while loop
+    * used while (choice != 1 && choice != 2) instead of while (choice != 1 || choice != 2) because || meant that any value that isn't 1 or isn't 2
+      would work for the loop. So even if the user inputs 1 that would mean it "isn't 2" so the game would not proceed.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 blah blah pesky bug...
 maybe some of these will move into the Obs.Ovrcm section...
-
+* typing letters for the dine and dash game
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,7 +40,7 @@ LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
-
+* take a break and come back to it if you can't figure it out
 
 
  ______   ______   __   __   __       ______   _______
@@ -90,4 +93,4 @@ Jason :: added rest of jobs to employee. started to add invalid choices
 2022-01-23
 Yuki :: finished maze. updated Customer so that the game flows, fixed while loop in Customer so that invalid choice works
 Jason :: finished employee, redid uml and flowchart
-Courtney :: added invalid choices in Customer
+Courtney :: added invalid choices in Customer (took me way too long to realize how to do it)
