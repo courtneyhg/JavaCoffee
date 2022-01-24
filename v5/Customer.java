@@ -141,7 +141,7 @@ public class Customer {
             System.out.println("good turn, you're almost out of the cafe!");
           }
           if (false){
-            System.out.println("Please enter valid choice:")
+            System.out.println("Please enter valid choice:");
           }
         }
         catch (Exception e) {}
