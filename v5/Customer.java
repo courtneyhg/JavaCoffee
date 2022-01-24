@@ -107,6 +107,7 @@ public class Customer {
           choice = Integer.parseInt(c.nextLine());
           while (choice != 1 && choice != 2){
             System.out.println("Please enter a valid choice: \nRestarting mini game...");
+            miniGame();
             choice = c.nextInt ();
           }
           if (choice == 1){
